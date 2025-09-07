@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
-import Home from './pages/Home'
-import Products from './pages/Products'
-import Certifications from './pages/Certifications'
-import Clients from './pages/Clients'
-import About from './pages/About'
-import Applications from './pages/Applications'
+import Navbar from './Components/Navbar'
+import Footer from './Components/Footer'
+import Home from './Pages/Home'
+import Products from './Pages/Products'
+import Certifications from './Pages/Certifications'
+import Clients from './Pages/Clients'
+import About from './Pages/About'
+import Applications from './Pages/Applications'
 
 function App() {
   return (

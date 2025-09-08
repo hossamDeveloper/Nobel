@@ -168,8 +168,9 @@ const Products = () => {
         {/* Product Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((product) => (
-            <div key={product.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div key={product.id} className="bg-white rounded-lg flex flex-col justify-between shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
               {/* Product Image */}
+              <div>
               <div className="relative h-48 bg-gray-200">
                 {product.image ? (
                   <img
@@ -242,7 +243,12 @@ const Products = () => {
                   </div>
                 </div>
 
-                <button 
+                
+              </div>
+              </div>
+
+              <div className="p-6">
+              <button 
                   onClick={() => setSelectedProduct(product)}
                   className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
                 >

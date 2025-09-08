@@ -2,7 +2,7 @@ import logo from '../assets/logo.png'
 
 const Footer = () => {
   return (
-    <footer className="bg-gradient-to-b from-gray-900 to-black text-white pt-12">
+    <footer className="bg-gray-900 text-gray-200 pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Company Info with Logo */}
@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="flex items-center gap-3 mb-4">
               <img src={logo} alt="Nobel Engineering" className="h-12 w-auto" />
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               Your trusted partner for engineering solutions
             </p>
             {/* Social */}
@@ -52,15 +52,15 @@ const Footer = () => {
                 <span>Tel & Fax: (00202)22718121 - (00202)22718125</span>
               </p>
               <p className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.7 3.1 4.5 5.9 7.6 7.6l2.5-2.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.6 22.3 1.7 14.4 1.7 4.3 1.7 3.6 2.3 3 3 3h3.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.5 2.5z"/></svg>
+                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.7 3.1 4.5 5.9 7.6 7.6l2.5-2.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.6 22.3 1.7 14.4 1.7 4.3 1.7 3.6 2.3 3 3 3h3.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2.1 .5 3.1 .1 .4 0 .9-.3 1.2l-2.5 2.5z"/></svg>
                 <span>Customer Service: (+2) 01065000130 – (+2) 01065000128</span>
               </p>
               <p className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 3l-7 4.5L5 7V6l7 4.5L19 6v1z"/></svg>
+                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1 .9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 3l-7 4.5L5 7V6l7 4.5L19 6v1z"/></svg>
                 <span>E-mail: <a href="mailto:nobeleng@yahoo.com" className="underline hover:text-white">nobeleng@yahoo.com</a></span>
               </p>
               <div className="pt-2">
-                <p className="font-semibold text-gray-200 mb-2">Working Hours</p>
+                <p className="font-semibold text-gray-300 mb-2">Working Hours</p>
                 <ul className="space-y-1">
                   <li className="flex items-center justify-between text-gray-300">
                     <span className="text-sm">Mon – Fri</span>
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gray-800 mt-10 pt-6 pb-6 text-center text-gray-400">
+        <div className="border-t border-gray-800 mt-10 pt-6 pb-6 text-center text-gray-500">
           <p>&copy; 2020 Nobel For Engineering Works. All rights reserved.</p>
         </div>
       </div>

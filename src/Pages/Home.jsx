@@ -3,9 +3,12 @@ import Slider from "../Components/Slider";
 import { categories } from "../data/products";
 import { useNavigate } from "react-router-dom";
 import { resolveAsset } from "../utils/assetResolver";
+import { useState } from "react";
+import Skeleton from "react-loading-skeleton";
 
 const Home = () => {
   const navigate = useNavigate();
+  const [imgLoaded, setImgLoaded] = useState({});
 
   const handleCategoryClick = (categoryId) => {
     navigate(`/products?category=${categoryId}`);
@@ -127,7 +130,10 @@ const Home = () => {
               >
                 <div className="text-center ">
                   <div>
-                    <div className="w-full h-52 mb-4 rounded-lg overflow-hidden">
+                    <div className="w-full h-52 mb-4 rounded-lg overflow-hidden relative">
+                      {!imgLoaded[category.id] && (
+                        <Skeleton className="absolute inset-0" width="100%" height="100%" />
+                      )}
                       <img
                         src={resolveAsset(category.image) || "/api/placeholder/300/200"}
                         alt={category.name}
@@ -138,6 +144,8 @@ const Home = () => {
                         loading="lazy"
                         decoding="async"
                         sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                        onLoad={() => setImgLoaded((p) => ({ ...p, [category.id]: true }))}
+                        style={{ opacity: imgLoaded[category.id] ? 1 : 0, transition: 'opacity 300ms ease' }}
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">

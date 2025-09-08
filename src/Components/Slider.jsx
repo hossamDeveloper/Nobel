@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import slider1 from '../assets/50-D3T6-8eR.jpg'
 import slider2 from '../assets/slider-2.jpg'
 import slider3 from '../assets/hero-image.jpg'
+import Skeleton from 'react-loading-skeleton'
 
 const Slider = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const [loaded, setLoaded] = useState([false, false, false])
   
   const slides = [
     {
@@ -27,6 +29,32 @@ const Slider = () => {
     }
   ]
 
+  // Preload the first slide image as early as possible and prefetch the rest in the background
+  useEffect(() => {
+    // Preload first image
+    const link = document.createElement('link')
+    link.rel = 'preload'
+    link.as = 'image'
+    link.href = slides[0].image
+    document.head.appendChild(link)
+
+    // Prefetch remaining images
+    slides.slice(1).forEach((s, idx) => {
+      const img = new Image()
+      img.decoding = 'async'
+      img.fetchPriority = 'low'
+      img.onload = () => {
+        setLoaded((prev) => {
+          const copy = [...prev]
+          copy[idx + 1] = true
+          return copy
+        })
+      }
+      img.src = s.image
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -39,32 +67,36 @@ const Slider = () => {
     setCurrentSlide(index)
   }
 
-  
+  const handleImgLoad = (index) => {
+    setLoaded((prev) => {
+      const copy = [...prev]
+      copy[index] = true
+      return copy
+    })
+  }
 
   return (
     <div className="relative w-full h-96 md:h-[500px] overflow-hidden">
-    
-      {/* Slides */}
       <div 
         className="flex transition-transform duration-500 ease-in-out h-full"
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full h-full flex-shrink-0 relative">
+            {!loaded[index] && (
+              <Skeleton className="absolute inset-0" width="100%" height="100%" baseColor="#111827" highlightColor="#1f2937" />
+            )}
             <img 
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
-              fetchpriority={index === 0 ? 'high' : 'auto'}
+              fetchpriority={index === 0 ? 'high' : 'low'}
               sizes="(max-width: 768px) 100vw, 100vw"
+              onLoad={() => handleImgLoad(index)}
+              style={{ opacity: loaded[index] ? 1 : 0, transition: 'opacity 300ms ease' }}
             />
-            
-            {/* Overlay */}
-            
-            
-            {/* Content */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white px-4 max-w-4xl">
                 <h1 className="text-3xl md:text-5xl font-bold mb-4">
@@ -85,9 +117,6 @@ const Slider = () => {
         ))}
       </div>
 
- 
-
-      {/* Dots Indicator */}
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button

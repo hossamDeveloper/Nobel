@@ -3,6 +3,25 @@ import Slider from "../Components/Slider";
 import { categories } from "../data/products";
 import { useNavigate } from "react-router-dom";
 
+// Resolve asset paths for production builds (Vite/Vercel)
+const resolveAssetPath = (path) => {
+  if (!path) return ''
+  if (/^https?:\/\//i.test(path)) return path
+  if (path.startsWith('/src/')) {
+    const relative = path.replace('/src/', '../')
+    try {
+      return new URL(relative, import.meta.url).href
+    } catch (e) {
+      return path
+    }
+  }
+  try {
+    return new URL(path, import.meta.url).href
+  } catch (e) {
+    return path
+  }
+}
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -40,6 +59,10 @@ const Home = () => {
                   src={heroImage}
                   alt="NOBEL Industrial Fans"
                   className="w-full max-w-2xl h-[23rem] object-cover rounded-lg"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
+                  sizes="(max-width: 1024px) 100vw, 1024px"
                 />
               </div>
             </div>
@@ -124,12 +147,15 @@ const Home = () => {
                   <div>
                     <div className="w-full h-52 mb-4 rounded-lg overflow-hidden">
                       <img
-                        src={category.image || "/api/placeholder/300/200"}
+                        src={resolveAssetPath(category.image) || "/api/placeholder/300/200"}
                         alt={category.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {
                           e.target.src = "/api/placeholder/300/200";
                         }}
+                        loading="lazy"
+                        decoding="async"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       />
                     </div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors duration-300">

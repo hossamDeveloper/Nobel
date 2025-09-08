@@ -55,6 +55,10 @@ const Slider = () => {
               src={slide.image}
               alt={slide.title}
               className="w-full h-full object-cover"
+              loading={index === 0 ? 'eager' : 'lazy'}
+              decoding="async"
+              fetchpriority={index === 0 ? 'high' : 'auto'}
+              sizes="(max-width: 768px) 100vw, 100vw"
             />
             
             {/* Overlay */}
@@ -102,4 +106,5 @@ const Slider = () => {
 }
 
 export default Slider
+
 

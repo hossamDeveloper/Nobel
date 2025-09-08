@@ -1,6 +1,27 @@
 import React from 'react'
 import { clients, otherClients } from '../data/clients'
 
+// Add helper to resolve asset paths for production (Vite + Vercel)
+const resolveAssetPath = (path) => {
+  if (!path) return ''
+  // If already an absolute URL or starts with / (public), keep as is except when it's /src/... which needs resolving
+  if (/^https?:\/\//i.test(path)) return path
+  if (path.startsWith('/src/')) {
+    // Convert "/src/..." to relative import via new URL so Vite bundles it
+    const relative = path.replace('/src/', '../')
+    try {
+      return new URL(relative, import.meta.url).href
+    } catch (e) {
+      return path
+    }
+  }
+  try {
+    return new URL(path, import.meta.url).href
+  } catch (e) {
+    return path
+  }
+}
+
 const Clients = () => {
   return (
     <div className="min-h-screen bg-gray-50">
@@ -20,12 +41,15 @@ const Clients = () => {
             >
               <div className="w-28 h-28 md:w-32 md:h-32 flex items-center justify-center overflow-hidden rounded-lg bg-white border border-gray-100">
                 <img
-                  src={client.image}
+                  src={resolveAssetPath(client.image)}
                   alt={client.name}
                   className="max-h-28 md:max-h-32 object-contain "
                   onError={(e) => {
-                    e.currentTarget.src = '/src/assets/logo.png'
+                    e.currentTarget.src = resolveAssetPath('/src/assets/logo.png')
                   }}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 640px) 33vw, (max-width: 1024px) 20vw, 10vw"
                 />
               </div>
               <p className="mt-3 text-sm font-medium text-gray-800 text-center line-clamp-2">

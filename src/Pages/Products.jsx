@@ -2,6 +2,25 @@ import { products, categories, getProductsByCategory, getProductsBySubcategory }
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 
+// Resolve asset paths like "/src/assets/..." so Vite bundles them correctly in production
+const resolveAssetPath = (path) => {
+  if (!path) return ''
+  if (/^https?:\/\//i.test(path)) return path
+  if (path.startsWith('/src/')) {
+    const relative = path.replace('/src/', '../')
+    try {
+      return new URL(relative, import.meta.url).href
+    } catch (e) {
+      return path
+    }
+  }
+  try {
+    return new URL(path, import.meta.url).href
+  } catch (e) {
+    return path
+  }
+}
+
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -172,13 +191,16 @@ const Products = () => {
               <div className="relative h-48 bg-gray-200">
                 {product.image ? (
                   <img
-                    src={product.image}
+                    src={resolveAssetPath(product.image)}
                     alt={product.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
                       e.target.style.display = 'none';
                       e.target.nextSibling.style.display = 'flex';
                     }}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 ) : null}
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100" style={{display: product.image ? 'none' : 'flex'}}>
@@ -290,13 +312,16 @@ const Products = () => {
                   <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden">
                     {selectedProduct.image ? (
                       <img
-                        src={selectedProduct.image}
+                        src={resolveAssetPath(selectedProduct.image)}
                         alt={selectedProduct.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
                         }}
+                        loading="eager"
+                        decoding="async"
+                        sizes="(max-width: 1024px) 100vw, 1024px"
                       />
                     ) : null}
                     <div className="absolute inset-0 flex items-center justify-center bg-gray-100" style={{display: selectedProduct.image ? 'none' : 'flex'}}>

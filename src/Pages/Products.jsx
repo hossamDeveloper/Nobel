@@ -1,25 +1,7 @@
 import { products, categories, getProductsByCategory, getProductsBySubcategory } from "../data/products";
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-
-// Resolve asset paths like "/src/assets/..." so Vite bundles them correctly in production
-const resolveAssetPath = (path) => {
-  if (!path) return ''
-  if (/^https?:\/\//i.test(path)) return path
-  if (path.startsWith('/src/')) {
-    const relative = path.replace('/src/', '../')
-    try {
-      return new URL(relative, import.meta.url).href
-    } catch (e) {
-      return path
-    }
-  }
-  try {
-    return new URL(path, import.meta.url).href
-  } catch (e) {
-    return path
-  }
-}
+import { resolveAsset } from "../utils/assetResolver";
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -191,7 +173,7 @@ const Products = () => {
               <div className="relative h-48 bg-gray-200">
                 {product.image ? (
                   <img
-                    src={resolveAssetPath(product.image)}
+                    src={resolveAsset(product.image)}
                     alt={product.name}
                     className="w-full h-full object-cover"
                     onError={(e) => {
@@ -312,7 +294,7 @@ const Products = () => {
                   <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden">
                     {selectedProduct.image ? (
                       <img
-                        src={resolveAssetPath(selectedProduct.image)}
+                        src={resolveAsset(selectedProduct.image)}
                         alt={selectedProduct.name}
                         className="w-full h-full object-cover"
                         onError={(e) => {

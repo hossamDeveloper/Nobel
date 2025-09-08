@@ -2,25 +2,7 @@
 import Slider from "../Components/Slider";
 import { categories } from "../data/products";
 import { useNavigate } from "react-router-dom";
-
-// Resolve asset paths for production builds (Vite/Vercel)
-const resolveAssetPath = (path) => {
-  if (!path) return ''
-  if (/^https?:\/\//i.test(path)) return path
-  if (path.startsWith('/src/')) {
-    const relative = path.replace('/src/', '../')
-    try {
-      return new URL(relative, import.meta.url).href
-    } catch (e) {
-      return path
-    }
-  }
-  try {
-    return new URL(path, import.meta.url).href
-  } catch (e) {
-    return path
-  }
-}
+import { resolveAsset } from "../utils/assetResolver";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -147,7 +129,7 @@ const Home = () => {
                   <div>
                     <div className="w-full h-52 mb-4 rounded-lg overflow-hidden">
                       <img
-                        src={resolveAssetPath(category.image) || "/api/placeholder/300/200"}
+                        src={resolveAsset(category.image) || "/api/placeholder/300/200"}
                         alt={category.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         onError={(e) => {

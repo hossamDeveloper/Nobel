@@ -54,7 +54,7 @@ export const applicationDetails = {
 			"Fans that are used to pressurize a space or create mechanical air pressure in a system are referred to as forced draft fans. Occasionally, manufacturing spaces are required by specifications to be maintained at a specific positive pressure. This requirement is common in clean room processes for scientific work. Forced draft is also used to identify the combustion process used in large boilers. When mechanical ventilation is supplied to these boilers, the heat transfer rate increases; the boiler can be reduced in size to produce the same amount of energy as natural draft.",
 		body:
 			"The New York Blower Company offers literally thousands of different types, models and sizes of air-movement equipment that can be customized and tailored to your specific application. See the chart below for a list of recommended fan designs, materials and features for forced draft use, or contact us to request a quote.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
 			"Shaft seals with ceramic felt elements.",
@@ -84,7 +84,7 @@ export const applicationDetails = {
 			"The aeration of process fluids uses bubblers similar to aquariums. Aquaculture and wastewater treatment use aeration to increase oxygen and support oxidation of VOCs and organics.",
 		body:
 			"Fans may aerate ponds with lower bed depths. Where odors are present, fans with exhaust hoods create a vacuum and route foul air to odor control or incineration. See recommended designs below or request a quote for water aeration equipment.",
-		image: "/src/assets/slider-2.jpg",
+		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"FRP Construction",
 			"Special Alloy Construction",
@@ -113,7 +113,7 @@ export const applicationDetails = {
 			"Forced draft fans fluidize and cool gravity conveying units. Required air volume and pressure depend on bulk density. Inlet filters avoid product contamination; inlet silencers may be required.",
 		body:
 			"Direct drive is common with the motor coupled to the fan wheel. Volume control via dampers or motor frequency control for energy savings. See recommended designs below.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
 			"Shaft seals with ceramic felt elements.",
@@ -143,7 +143,7 @@ export const applicationDetails = {
 			"High-velocity air removes dirt, fumes, oil mist, droplets and solutions from products before or after washing. High-quality drying is essential for food, pharma and medical packaging.",
 		body:
 			"Systems often use higher pressure and horsepower with multiple zones and higher conveyor speeds. Inlet silencers and filters are commonly required.",
-		image: "/src/assets/slider-2.jpg",
+		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Direct Drive where possible",
 			"Bearings and motors isolated from the process.",
@@ -174,7 +174,7 @@ export const applicationDetails = {
 			"Rugged-duty forced-draft fans for burner systems demand stable airflow and constant pressure. High-speed dryers can use burner supply fan velocity to fluidize or convey product.",
 		body:
 			"Used across paint finishing, building materials and graphic arts at high conveyor speeds. Products below are recommended for combustion air applications.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Direct Drive where possible",
 			"Bearings and motors isolated from the process.",
@@ -204,7 +204,7 @@ export const applicationDetails = {
 			"Capturing contaminated air, odors or emissions is best at the source using specialized hoods and systems. Emissions are conveyed to filtration or destruction devices.",
 		body:
 			"Fans are typically located on the clean side of filters, with material-handling or corrosion-resistant fans when required by design.",
-		image: "/src/assets/slider-2.jpg",
+		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Direct and belt drive designs",
 			"Bearings and motors isolated from the process.",
@@ -235,7 +235,7 @@ export const applicationDetails = {
 			"Supply and exhaust fans support heat exchange in dry/wet systems and evaporative cooling. Low-noise, high-efficiency designs are vital for hospitals and critical installations.",
 		body:
 			"Fans are available with corrosion-resistant or alloy construction for severe environments. Recommended designs below.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
 			"Shaft seals with ceramic felt elements.",
@@ -264,7 +264,7 @@ export const applicationDetails = {
 			"Adding clean dilution air to odor or moisture-laden emissions addresses visual and code constraints. Positioning exhaust away from intakes and adding dilution achieves design criteria.",
 		body:
 			"Effective with high-temperature or corrosive gas streams using a fan and Venturi conductor as the primary air mover.",
-		image: "/src/assets/slider-2.jpg",
+		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Direct and belt drive designs",
 			"Bearings and motors isolated from the process.",
@@ -297,7 +297,7 @@ export const applicationDetails = {
 			"Batch dryers reduce moisture levels; recirculating fans supply heated air. Large rooms may use bi-directional fans; continuous dryers include rotary drum and spray dryers.",
 		body:
 			"Mean temperature and moisture are controlled by forced and induced draft fans. NYB offers solutions for all these requirements.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
 			"Shaft seals with ceramic felt elements.",
@@ -327,7 +327,7 @@ export const applicationDetails = {
 			"Capture and control of emissions is achieved by moving air through filters or scrubbers. Fans can be on the clean side or dirty air side depending on design.",
 		body:
 			"Special construction may be needed for corrosive or abrasive air. Recommended designs below.",
-		image: "/src/assets/slider-2.jpg",
+		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
 			"Shaft seals with ceramic felt elements.",
@@ -358,7 +358,7 @@ export const applicationDetails = {
 			"Spray dryers and pneumatic conveying use fluidizing air systems. Controls ensure correct fluidizing energy; moisture control is critical.",
 		body:
 			"Combos of inlet/outlet dampers with speed controls are common. Highest efficiency fans are preferred.",
-		image: "/src/assets/slider-1.jpg",
+		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Direct drive or belt drive",
 			"Bearings and motors isolated from the process.",

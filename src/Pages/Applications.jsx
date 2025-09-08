@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { applicationsList, applicationDetails } from '../data/applications'
+import { resolveAsset } from '../utils/assetResolver'
 
 const Applications = () => {
 	const defaultKey = 'Forced Draft'
@@ -42,9 +43,13 @@ const Applications = () => {
 								<div className="w-full md:w-72">
 									<p className="text-xs text-gray-500 mb-1">Product Image</p>
 									<img
-										src={details.image}
+										src={resolveAsset(details.image)}
 										alt={details.title}
 										className="w-full h-48 object-cover rounded"
+										onError={(e) => { e.currentTarget.style.display = 'none' }}
+										loading="lazy"
+										decoding="async"
+										sizes="(max-width: 768px) 100vw, 18rem"
 									/>
 								</div>
 							)}

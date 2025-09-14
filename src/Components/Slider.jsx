@@ -3,29 +3,32 @@ import slider1 from '../assets/50-D3T6-8eR.jpg'
 import slider2 from '../assets/slider-2.jpg'
 import slider3 from '../assets/hero-image.jpg'
 import Skeleton from 'react-loading-skeleton'
+import { useLanguage } from '../utils/LanguageContext'
+import { getTranslation } from '../utils/translations'
 
 const Slider = () => {
+  const { language, isArabic } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
   const [loaded, setLoaded] = useState([false, false, false])
   
   const slides = [
     {
       image: slider3,
-      title: "NOBEL Engineering Excellence",
-      subtitle: "25+ Years of Innovation in Industrial Fans",
-      description: "Leading manufacturer of heavy-duty industrial fans, completely manufactured and assembled in Egypt."
+      title: getTranslation('nobelEngineeringExcellence', language),
+      subtitle: getTranslation('yearsOfInnovation', language),
+      description: getTranslation('leadingManufacturer', language)
     },
     {
       image: slider2,
-      title: "Advanced Technology Solutions",
-      subtitle: "Modern Manufacturing Excellence",
-      description: "Equipped with laser cutting, CNC punching machines, and state-of-the-art production facilities."
+      title: getTranslation('advancedTechnologySolutions', language),
+      subtitle: getTranslation('modernManufacturingExcellence', language),
+      description: getTranslation('equippedWithTechnology', language)
     },
     {
       image: slider1,
-      title: "Advanced Technology Solutions",
-      subtitle: "Modern Manufacturing Excellence",
-      description: "Equipped with laser cutting, CNC punching machines, and state-of-the-art production facilities."
+      title: getTranslation('advancedTechnologySolutions', language),
+      subtitle: getTranslation('modernManufacturingExcellence', language),
+      description: getTranslation('equippedWithTechnology', language)
     }
   ]
 
@@ -79,7 +82,11 @@ const Slider = () => {
     <div className="relative w-full h-96 md:h-[500px] overflow-hidden">
       <div 
         className="flex transition-transform duration-500 ease-in-out h-full"
-        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        style={{ 
+          transform: isArabic 
+            ? `translateX(${currentSlide * 100}%)` 
+            : `translateX(-${currentSlide * 100}%)` 
+        }}
       >
         {slides.map((slide, index) => (
           <div key={index} className="w-full h-full flex-shrink-0 relative">
@@ -97,8 +104,8 @@ const Slider = () => {
               onLoad={() => handleImgLoad(index)}
               style={{ opacity: loaded[index] ? 1 : 0, transition: 'opacity 300ms ease' }}
             />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center text-white px-4 max-w-4xl">
+            <div className="absolute inset-0 flex items-center justify-center  ">
+              <div className={`text-center flex flex-col items-center justify-center text-white px-4 max-w-4xl ${isArabic ? 'text-right' : 'text-left'}`}>
                 <h1 className="text-3xl md:text-5xl font-bold mb-4">
                   {slide.title}
                 </h1>
@@ -109,7 +116,7 @@ const Slider = () => {
                   {slide.description}
                 </p>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors duration-200">
-                  Learn More
+                  {getTranslation('learnMore', language)}
                 </button>
               </div>
             </div>
@@ -117,7 +124,7 @@ const Slider = () => {
         ))}
       </div>
 
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+      <div className={`absolute bottom-4 ${isArabic ? 'right-4' : 'left-1/2 transform -translate-x-1/2'} flex ${isArabic ? 'space-x-reverse' : 'space-x-2'} ${isArabic ? 'space-x-2' : ''}`}>
         {slides.map((_, index) => (
           <button
             key={index}
@@ -135,5 +142,10 @@ const Slider = () => {
 }
 
 export default Slider
+
+
+
+
+
 
 

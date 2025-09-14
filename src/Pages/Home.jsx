@@ -5,9 +5,12 @@ import { useNavigate } from "react-router-dom";
 import { resolveAsset } from "../utils/assetResolver";
 import { useState } from "react";
 import Skeleton from "react-loading-skeleton";
+import { useLanguage } from "../utils/LanguageContext";
+import { getTranslation } from "../utils/translations";
 
 const Home = () => {
   const navigate = useNavigate();
+  const { language, isArabic } = useLanguage();
   const [imgLoaded, setImgLoaded] = useState({});
 
   const handleCategoryClick = (categoryId) => {
@@ -20,29 +23,22 @@ const Home = () => {
       <main className="max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-20">
           <h1 className="text-5xl font-bold text-gray-900 mb-6">
-            Discover Who Are <span className="text-blue-600">NOBEL</span> ?
+            {getTranslation('discoverWhoAreNobel', language)}
           </h1>
           <h2 className="text-3xl font-semibold text-blue-600 mb-8">
-            NOBEL Builds Value In Air
+            {getTranslation('nobelBuildsValueInAir', language)}
           </h2>
           <div className="bg-white rounded-lg shadow-lg p-8 mb-8 max-w-[90rem] mx-auto">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-gray-600 text-lg leading-relaxed">
-                  NOBEL is a company which has been operating for more than 25
-                  years in the aeraulic sector by producing various types of
-                  heavy-duty industrial fans which are completely manufactured
-                  and assembled in Egypt. NOBEL is the company that is able to
-                  provide inexpensive, reliable, and effective air ventilation
-                  solutions as our production department is equipped with modern
-                  technologies such as laser cutting, CNC punching machines,
-                  static and dynamic balancing, etc.
+                  {getTranslation('nobelDescription', language)}
                 </p>
               </div>
               <div className="flex justify-center">
                 <img
                   src={heroImage}
-                  alt="NOBEL Industrial Fans"
+                  alt={getTranslation('nobelIndustrialFansAlt', language)}
                   className="w-full max-w-2xl h-[23rem] object-cover rounded-lg"
                   loading="eager"
                   decoding="async"
@@ -56,7 +52,7 @@ const Home = () => {
 
         <div className="bg-blue-600 text-white rounded-lg p-8 mb-20">
           <h2 className="text-3xl font-bold mb-8 text-center">
-            Why Choose NOBEL?
+            {getTranslation('whyChooseNobel', language)}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -70,10 +66,10 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold mb-3">
-                25+ Years Experience
+                {getTranslation('yearsExperience', language)}
               </h3>
               <p className="text-blue-100">
-                Over 25 years in the aeraulic sector
+                {getTranslation('yearsExperienceDesc', language)}
               </p>
             </div>
             <div className="text-center">
@@ -86,9 +82,11 @@ const Home = () => {
                   <path d="M9.4 3h5.2L16 5h2a2 2 0 012 2v2h-2V7h-2l-1.4 2h-5.2L8 7H6v2H4V7a2 2 0 012-2h2l1.4-2zM4 15h2v2h2l1.4-2h5.2L16 17h2v-2h2v2a2 2 0 01-2 2h-2l-1.4 2H9.4L8 19H6a2 2 0 01-2-2v-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Modern Technology</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                {getTranslation('modernTechnology', language)}
+              </h3>
               <p className="text-blue-100">
-                Laser cutting, CNC punching machines
+                {getTranslation('modernTechnologyDesc', language)}
               </p>
             </div>
             <div className="text-center">
@@ -101,9 +99,11 @@ const Home = () => {
                   <path d="M3 20h18l-9-16-9 16zm9-5l3 5H9l3-5z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Made in Egypt</h3>
+              <h3 className="text-xl font-semibold mb-3">
+                {getTranslation('madeInEgypt', language)}
+              </h3>
               <p className="text-blue-100">
-                Completely manufactured and assembled in Egypt
+                {getTranslation('madeInEgyptDesc', language)}
               </p>
             </div>
           </div>
@@ -113,11 +113,10 @@ const Home = () => {
         <div className="mb-20">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">
-              NOBEL Product Categories
+              {getTranslation('nobelProductCategories', language)}
             </h2>
             <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-              Explore our comprehensive range of industrial ventilation and air
-              movement solutions
+              {getTranslation('exploreOurRange', language)}
             </p>
           </div>
 
@@ -159,16 +158,16 @@ const Home = () => {
                     {category.subcategories &&
                       category.subcategories.length > 0 && (
                         <p className="text-sm text-gray-500 mb-3">
-                          {category.subcategories.length} subcategories
+                          {category.subcategories.length} {getTranslation('subcategories', language)}
                         </p>
                       )}
                   </div>
                  
                 </div>
                 <div className="flex items-center justify-center text-blue-600 text-sm font-medium group-hover:text-blue-700">
-                    <span>View Products</span>
+                    <span>{getTranslation('viewProducts', language)}</span>
                     <svg
-                      className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-300"
+                      className={`w-4 h-4 ${isArabic ? 'rotate-180 mr-1 mt-1' : ''} ml-1 group-hover:translate-x-1 transition-transform duration-300`}
                       fill="currentColor"
                       viewBox="0 0 20 20"
                     >
@@ -188,14 +187,14 @@ const Home = () => {
               onClick={() => navigate("/products")}
               className="bg-gray-800 text-white py-4 px-10 rounded-lg hover:bg-gray-900 transition-colors duration-200 text-lg font-medium"
             >
-              View All Products
+              {getTranslation('viewAllProducts', language)}
             </button>
           </div>
         </div>
 
         <div className="bg-white rounded-lg shadow-lg p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            Get In Touch
+            {getTranslation('getInTouch', language)}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -213,10 +212,10 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Locate Us
+                {getTranslation('locateUs', language)}
               </h3>
               <p className="text-gray-600">
-                14th helmy abd el aty st. eight zone nasr city cairo egypt
+                {getTranslation('locateUsAddress', language)}
               </p>
               <a
                 href="https://maps.app.goo.gl/HfM85CbHR6tw2Ajw6"
@@ -224,7 +223,7 @@ const Home = () => {
                 rel="noopener noreferrer"
                 className="inline-block mt-2 text-sm text-blue-600 hover:text-blue-700 underline"
               >
-                View location on Google Maps
+                {getTranslation('viewLocationOnGoogleMaps', language)}
               </a>
             </div>
             <div className="text-center">
@@ -242,9 +241,11 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Open Hours
+                {getTranslation('openHours', language)}
               </h3>
-              <p className="text-gray-600">Sat To Fri 9:00 AM - 9:00 PM</p>
+              <p className="text-gray-600">
+                {getTranslation('openHoursTime', language)}
+              </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
@@ -258,9 +259,11 @@ const Home = () => {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Mail Us
+                {getTranslation('mailUs', language)}
               </h3>
-              <p className="text-gray-600">nobeleng@yahoo.com</p>
+              <p className="text-gray-600">
+                {getTranslation('mailUsEmail', language)}
+              </p>
             </div>
           </div>
         </div>

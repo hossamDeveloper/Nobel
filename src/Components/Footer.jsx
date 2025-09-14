@@ -1,6 +1,10 @@
 import logo from '../assets/logo.png'
+import { useLanguage } from '../utils/LanguageContext'
+import { getTranslation } from '../utils/translations'
 
 const Footer = () => {
+  const { language, isArabic } = useLanguage()
+  
   return (
     <footer className="bg-gray-900 text-gray-200 pt-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -8,10 +12,10 @@ const Footer = () => {
           {/* Company Info with Logo */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Nobel Engineering" className="h-12 w-auto" />
+              <img src={logo} alt={getTranslation('logoAlt', language)} className="h-12 w-auto" />
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              Your trusted partner for engineering solutions
+              {getTranslation('trustedPartner', language)}
             </p>
             {/* Social */}
             <div className="flex items-center gap-3 mt-5">
@@ -29,51 +33,48 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-sm tracking-wider uppercase text-gray-400 mb-4">Quick Links</h4>
+            <h4 className="text-sm tracking-wider uppercase text-gray-400 mb-4">
+              {getTranslation('quickLinks', language)}
+            </h4>
             <ul className="space-y-2 text-sm">
-              <li><a href="/" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">Home</a></li>
-              <li><a href="/products" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">Products</a></li>
-              <li><a href="/applications" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">Applications</a></li>
-              <li><a href="/about" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">About</a></li>
-              <li><a href="/clients" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">Clients</a></li>
+              <li><a href="/" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('home', language)}</a></li>
+              <li><a href="/products" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('products', language)}</a></li>
+              <li><a href="/applications" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('applications', language)}</a></li>
+              <li><a href="/about" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('about', language)}</a></li>
+              <li><a href="/clients" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('clients', language)}</a></li>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div>
-            <h4 className="text-sm tracking-wider uppercase text-gray-400 mb-4">Contact</h4>
+            <h4 className="text-sm tracking-wider uppercase text-gray-400 mb-4">
+              {getTranslation('contact', language)}
+            </h4>
             <div className="text-sm text-gray-300 space-y-3">
               <p className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.1 2 5 5.1 5 9c0 5.2 7 13 7 13s7-7.8 7-13c0-3.9-3.1-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
-                <span>14th Helmy Abd El Aty St. Eight Zone, Nasr City, Cairo, Egypt</span>
-              </p>
-              <p className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.7 3.1 4.5 5.9 7.6 7.6l2.5-2.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.6 22.3 1.7 14.4 1.7 4.3 1.7 3.6 2.3 3 3 3h3.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.5 2.5z"/></svg>
-                <span>Tel & Fax: (00202)22718121 - (00202)22718125</span>
+                <span>{getTranslation('locateUsAddress', language)}</span>
               </p>
               <p className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.7 3.1 4.5 5.9 7.6 7.6l2.5-2.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.6 22.3 1.7 14.4 1.7 4.3 1.7 3.6 2.3 3 3 3h3.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2.1 .5 3.1 .1 .4 0 .9-.3 1.2l-2.5 2.5z"/></svg>
-                <span>Customer Service: (+2) 01065000130 – (+2) 01065000128</span>
+                <span>{getTranslation('telFax', language)}: (00202)22718121 - (00202)22718125</span>
+              </p>
+              <p className="flex items-start gap-3">
+                <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.6 10.8c1.7 3.1 4.5 5.9 7.6 7.6l2.5-2.5c.3-.3.8-.4 1.2-.3 1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C9.6 22.3 1.7 14.4 1.7 4.3 1.7 3.6 2.3 3 3 3h3.6c.7 0 1.3.6 1.3 1.3 0 1 .2 2.1 .5 3.1 .1 .4 0 .9-.3 1.2l-2.5 2.5z"/></svg>
+                <span>{getTranslation('customerService', language)}: (+2) 01065000130 – (+2) 01065000128</span>
               </p>
               <p className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1 .9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 3l-7 4.5L5 7V6l7 4.5L19 6v1z"/></svg>
-                <span>E-mail: <a href="mailto:nobeleng@yahoo.com" className="underline hover:text-white">nobeleng@yahoo.com</a></span>
+                <span>{getTranslation('email', language)}: <a href="mailto:nobeleng@yahoo.com" className="underline hover:text-white">nobeleng@yahoo.com</a></span>
               </p>
               <div className="pt-2">
-                <p className="font-semibold text-gray-300 mb-2">Working Hours</p>
+                <p className="font-semibold text-gray-300 mb-2">{getTranslation('workingHours', language)}</p>
                 <ul className="space-y-1">
                   <li className="flex items-center justify-between text-gray-300">
-                    <span className="text-sm">Mon – Fri</span>
+                    <span className="text-sm">{getTranslation('weekdays', language)}</span>
                     <span className="text-xs bg-white/10 text-gray-100 px-2 py-1 rounded-md">7:00 AM – 6:00 PM</span>
                   </li>
-                  <li className="flex items-center justify-between text-gray-300">
-                    <span className="text-sm">Sat</span>
-                    <span className="text-xs bg-white/10 text-gray-100 px-2 py-1 rounded-md">7:00 AM – 6:00 PM</span>
-                  </li>
-                  <li className="flex items-center justify-between text-gray-300">
-                    <span className="text-sm">Sun</span>
-                    <span className="text-xs bg-white/10 text-gray-100 px-2 py-1 rounded-md">8:00 AM – 6:00 PM</span>
-                  </li>
+                 
                 </ul>
               </div>
             </div>
@@ -82,7 +83,7 @@ const Footer = () => {
 
         {/* Divider */}
         <div className="border-t border-gray-800 mt-10 pt-6 pb-6 text-center text-gray-500">
-          <p>&copy; 2020 Nobel For Engineering Works. All rights reserved.</p>
+          <p>{getTranslation('copyright', language)}</p>
         </div>
       </div>
     </footer>

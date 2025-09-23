@@ -478,28 +478,28 @@ export const generateAllProducts = () => {
             motor: "thermal insulation (class F)"
           }
         },
-        {
-          name: "Axial inline smoke bifurcated fans - NSAF/2 series",
-          description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
-          image: "src/assets/slider-2.jpg",
-          specifications: {
-            wheelSizes: "300 mm up to 2240 mm",
-            volume: "from 1000 m3/h up to 250000 m3/h",
-            pressure: "from 5 mm/H20 up to 350mm/H20",
-            motor: "thermal insulation (class F)"
-          }
-        },
-        {
-          name: "Axial inline smoke bifurcated fans - NSAH series",
-          description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
-          image: "src/assets/50-D3T6-8eR.jpg",
-          specifications: {
-            wheelSizes: "300 mm up to 2240 mm",
-            volume: "from 1000 m3/h up to 250000 m3/h",
-            pressure: "from 5 mm/H20 up to 350mm/H20",
-            motor: "thermal insulation (class H)"
-          }
-        }
+        // {
+        //   name: "Axial inline smoke bifurcated fans - NSAF/2 series",
+        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
+        //   image: "src/assets/slider-2.jpg",
+        //   specifications: {
+        //     wheelSizes: "300 mm up to 2240 mm",
+        //     volume: "from 1000 m3/h up to 250000 m3/h",
+        //     pressure: "from 5 mm/H20 up to 350mm/H20",
+        //     motor: "thermal insulation (class F)"
+        //   }
+        // },
+        // {
+        //   name: "Axial inline smoke bifurcated fans - NSAH series",
+        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
+        //   image: "src/assets/50-D3T6-8eR.jpg",
+        //   specifications: {
+        //     wheelSizes: "300 mm up to 2240 mm",
+        //     volume: "from 1000 m3/h up to 250000 m3/h",
+        //     pressure: "from 5 mm/H20 up to 350mm/H20",
+        //     motor: "thermal insulation (class H)"
+        //   }
+        // }
       ]
     },
     {

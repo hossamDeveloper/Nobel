@@ -53,7 +53,7 @@ export const applicationDetails = {
 		intro:
 			"Fans that are used to pressurize a space or create mechanical air pressure in a system are referred to as forced draft fans. Occasionally, manufacturing spaces are required by specifications to be maintained at a specific positive pressure. This requirement is common in clean room processes for scientific work. Forced draft is also used to identify the combustion process used in large boilers. When mechanical ventilation is supplied to these boilers, the heat transfer rate increases; the boiler can be reduced in size to produce the same amount of energy as natural draft.",
 		body:
-			"The New York Blower Company offers literally thousands of different types, models and sizes of air-movement equipment that can be customized and tailored to your specific application. See the chart below for a list of recommended fan designs, materials and features for forced draft use, or contact us to request a quote.",
+			"Nobel offers literally thousands of different types, models and sizes of air-movement equipment that can be customized and tailored to your specific application. See the chart below for a list of recommended fan designs, materials and features for forced draft use, or contact us to request a quote.",
 		image: "src/assets/slider-1.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
@@ -389,7 +389,7 @@ export const applicationDetails = {
 		intro:
 			"Performing industrial processes within contained spaces have resulted in industrial ventilation codes. Nobel makes a wide variety of industrial fume exhausting fans & blowers in many materials to accomplish this task. From the simplest exhaust hood with a fan, to a complex industrial oxidizer, Nobel can help with the necessary process fans. When processes produce fumes, the exhaust system can simply remove the fumes from the occupied space. If the fumes are corrosive, the materials of construction for the fans and duct system must be protected. Nobel makes fans in several alloys with special coatings available.",
 		body:
-			"The New York Blower Company offers literally thousands of different types, models and sizes of air-movement equipment that can be customized and tailored to your specific application. See the chart below for a list of recommended fan designs, materials and features for fume exhausting use, or contact us to request a quote.",
+			"Nobel offers literally thousands of different types, models and sizes of air-movement equipment that can be customized and tailored to your specific application. See the chart below for a list of recommended fan designs, materials and features for fume exhausting use, or contact us to request a quote.",
 		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process.",
@@ -542,7 +542,7 @@ export const applicationDetails = {
 		intro:
 			"Nobel produces every available type of fan necessary for HVAC systems from simple axial fans to solutions for dense office and healthcare facilities.",
 		body:
-			"The New York Blower Company offers thousands of configurations that can be tailored to your application. See recommended designs below.",
+			"Nobel offers thousands of configurations that can be tailored to your application. See recommended designs below.",
 		image: "src/assets/slider-2.jpg",
 		designFeatures: [
 			"Bearings and motors isolated from the process. Shaft seals with ceramic felt elements.",

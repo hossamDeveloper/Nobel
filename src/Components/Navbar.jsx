@@ -159,6 +159,16 @@ const Navbar = () => {
 
           {/* رقم التواصل وزر الترجمة */}
           <div className="hidden md:flex items-center space-x-4">
+            {/* Software Button */}
+            <a
+              href="https://software.nobeleng.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-md text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+            >
+              {getTranslation('software', language)}
+            </a>
+
             {/* زر الترجمة */}
             <button
               onClick={toggleLanguage}
@@ -195,6 +205,16 @@ const Navbar = () => {
               </svg>
             </button>
             
+            {/* Mobile Software Button */}
+            <a
+              href="https://software.nobeleng.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 text-white bg-blue-600 rounded-md text-sm"
+            >
+              {getTranslation('software', language)}
+            </a>
+            
             {/* Mobile Menu Button */}
             <button 
               className="p-2"
@@ -226,6 +246,16 @@ const Navbar = () => {
                 {section.name}
               </Link>
             ))}
+            
+            {/* External Software Link (Desktop secondary row)
+            <a
+              href="https://software.nobeleng.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 px-4 py-2 rounded-md text-sm font-medium text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200"
+            >
+              {getTranslation('software', language)}
+            </a> */}
             
             {/* ContactUs Dropdown */}
             <div className="relative">
@@ -410,6 +440,18 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
+              
+              {/* Mobile Software Link */}
+              <li>
+                <a
+                  href="https://software.nobeleng.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 rounded-md text-base font-medium text-white bg-blue-600 hover:bg-blue-700"
+                >
+                  {getTranslation('software', language)}
+                </a>
+              </li>
               
               {/* Mobile Contact Info */}
               <li>

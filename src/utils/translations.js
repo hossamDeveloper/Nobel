@@ -64,7 +64,10 @@ export const translations = {
     mailUs: 'Mail Us',
     mailUsEmail: 'nobeleng@yahoo.com',
     nobelIndustrialFansAlt: 'NOBEL Industrial Fans',
-    
+
+    // Global Software
+    software: 'Software',
+
     // Slider
     nobelEngineeringExcellence: 'NOBEL Engineering Excellence',
     yearsOfInnovation: '25+ Years of Innovation in Industrial Fans',
@@ -106,6 +109,36 @@ export const translations = {
     projectManagersDesc: 'Dedicated project management professionals',
     supportStaff: 'Support Staff',
     supportStaffDesc: 'Committed support and administrative team',
+
+    // Applications Page
+    applicationsPageTitle: 'Applications',
+    applicationsPageSubtitle: 'Reliable air solutions for various industrial applications',
+    designFeatures: 'Design Features',
+    availableMaterials: 'Available Materials of Construction',
+
+    // Products Page
+    productsPageTitle: 'Our Products',
+    productsPageSubtitle: 'Discover our comprehensive range of industrial ventilation and air movement solutions',
+    searchSeriesPlaceholder: 'Search product series...',
+    allCategories: 'All Categories',
+    allPrefix: 'All',
+    showing: 'Showing',
+    productSeriesLower: 'product series',
+    inLower: 'in',
+    seriesLabel: 'Series',
+    viewDetails: 'View Details',
+    noResultsTitle: 'No product series found matching your criteria.',
+    noResultsHint: 'Try selecting a different category or adjusting your search terms.',
+    productSeriesLabel: 'Product Series',
+    partOfLabel: 'Part of:',
+    keySpecifications: 'Key Specifications:',
+    specificationsLabel: 'Specifications',
+    wheelSizesLabel: 'Wheel Sizes:',
+    volumeLabel: 'Volume:',
+    volumeFlowLabel: 'Volume Flow:',
+    pressureLabel: 'Pressure:',
+    temperatureLabel: 'Temperature:',
+    close: 'Close',
   },
   
   ar: {
@@ -173,7 +206,10 @@ export const translations = {
     mailUs: 'راسلنا',
     mailUsEmail: 'nobeleng@yahoo.com',
     nobelIndustrialFansAlt: 'مراوح نوبل الصناعية',
-    
+
+    // Global Software
+    software: 'البرمجيات',
+
     // Slider
     nobelEngineeringExcellence: 'تميز نوبل الهندسي',
     yearsOfInnovation: 'أكثر من 25 عاماً من الابتكار في المراوح الصناعية',
@@ -215,6 +251,36 @@ export const translations = {
     projectManagersDesc: 'محترفو إدارة المشاريع المتفانون',
     supportStaff: 'فريق الدعم',
     supportStaffDesc: 'فريق الدعم والإدارة الملتزم',
+
+    // Applications Page
+    applicationsPageTitle: 'التطبيقات',
+    applicationsPageSubtitle: 'حلول موثوقة للهواء لمختلف التطبيقات الصناعية',
+    designFeatures: 'ميزات التصميم',
+    availableMaterials: 'مواد التصنيع المتاحة',
+
+    // Products Page
+    productsPageTitle: 'منتجاتنا',
+    productsPageSubtitle: 'اكتشف مجموعتنا الشاملة من حلول التهوية الصناعية وتحريك الهواء',
+    searchSeriesPlaceholder: 'ابحث عن سلاسل المنتجات...',
+    allCategories: 'جميع الفئات',
+    allPrefix: 'كل',
+    showing: 'عرض',
+    productSeriesLower: 'سلاسل المنتجات',
+    inLower: 'ضمن',
+    seriesLabel: 'سلسلة',
+    viewDetails: 'عرض التفاصيل',
+    noResultsTitle: 'لم يتم العثور على سلاسل منتجات تطابق معاييرك.',
+    noResultsHint: 'جرّب اختيار فئة مختلفة أو تعديل كلمات البحث.',
+    productSeriesLabel: 'سلسلة المنتج',
+    partOfLabel: 'جزء من:',
+    keySpecifications: 'المواصفات الرئيسية:',
+    specificationsLabel: 'المواصفات',
+    wheelSizesLabel: 'مقاسات العجلة:',
+    volumeLabel: 'السعة:',
+    volumeFlowLabel: 'معدل التدفق:',
+    pressureLabel: 'الضغط:',
+    temperatureLabel: 'درجة الحرارة:',
+    close: 'إغلاق',
   }
 }
 

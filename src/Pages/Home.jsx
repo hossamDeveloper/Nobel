@@ -1,6 +1,6 @@
-﻿import heroImage from "../assets/hero-image.jpg";
+﻿import heroImage from "../assets/about.jpeg";
 import Slider from "../Components/Slider";
-import { categories } from "../data/products";
+import { categories, getCategories } from "../data/products";
 import { useNavigate } from "react-router-dom";
 import { resolveAsset } from "../utils/assetResolver";
 import { useState } from "react";
@@ -16,6 +16,8 @@ const Home = () => {
   const handleCategoryClick = (categoryId) => {
     navigate(`/products?category=${categoryId}`);
   };
+
+  const localizedCategories = getCategories(isArabic);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -56,14 +58,8 @@ const Home = () => {
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-yellow-300"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M10 2l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 14.77 4.22 16.7l.91-5.32L1.27 7.62l5.34-.78L10 2z" />
-                </svg>
+              <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+               <img src="src/assets/experience.jpg" className="rounded-lg" alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('yearsExperience', language)}
@@ -73,14 +69,8 @@ const Home = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-gray-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M9.4 3h5.2L16 5h2a2 2 0 012 2v2h-2V7h-2l-1.4 2h-5.2L8 7H6v2H4V7a2 2 0 012-2h2l1.4-2zM4 15h2v2h2l1.4-2h5.2L16 17h2v-2h2v2a2 2 0 01-2 2h-2l-1.4 2H9.4L8 19H6a2 2 0 01-2-2v-2z" />
-                </svg>
+              <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+              <img src="src/assets/tech.png" alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('modernTechnology', language)}
@@ -90,14 +80,8 @@ const Home = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-16 h-16 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <svg
-                  className="w-8 h-8 text-orange-700"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M3 20h18l-9-16-9 16zm9-5l3 5H9l3-5z" />
-                </svg>
+              <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <img src="src/assets/made-in.png" alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('madeInEgypt', language)}
@@ -121,7 +105,7 @@ const Home = () => {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {categories.map((category) => (
+            {localizedCategories.map((category) => (
               <div
                 key={category.id}
                 onClick={() => handleCategoryClick(category.id)}
@@ -155,12 +139,7 @@ const Home = () => {
                         {category.description}
                       </p>
                     )}
-                    {category.subcategories &&
-                      category.subcategories.length > 0 && (
-                        <p className="text-sm text-gray-500 mb-3">
-                          {category.subcategories.length} {getTranslation('subcategories', language)}
-                        </p>
-                      )}
+                    
                   </div>
                  
                 </div>
@@ -268,6 +247,16 @@ const Home = () => {
           </div>
         </div>
       </main>
+
+      {/* Floating Software Button */}
+      <a
+        href="https://software.nobeleng.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-6 ${isArabic ? 'left-6' : 'right-6'} z-40 inline-flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white text-sm`}
+      >
+        {getTranslation('software', language)}
+      </a>
     </div>
   );
 };

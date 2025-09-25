@@ -1,7 +1,9 @@
-import { products, categories, getProductsByCategory, getProductsBySubcategory } from "../data/products";
-import { useState, useEffect } from "react";
+import { products, categories, getProductsByCategory, getProductsBySubcategory, getCategories, getAllProducts, getProductsByCategoryLocalized, getProductsBySubcategoryLocalized } from "../data/products";
+import { useState, useEffect, useMemo } from "react";
 import { useSearchParams } from "react-router-dom";
 import { resolveAsset } from "../utils/assetResolver";
+import { useLanguage } from "../utils/LanguageContext";
+import { getTranslation } from "../utils/translations";
 
 const Products = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -9,6 +11,7 @@ const Products = () => {
   const [selectedSubcategory, setSelectedSubcategory] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const { language, isArabic } = useLanguage();
 
   // Initialize from URL once on mount
   useEffect(() => {
@@ -29,20 +32,22 @@ const Products = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const getFilteredProducts = () => {
-    let filtered = products;
+  const localizedCategories = useMemo(() => getCategories(isArabic), [isArabic]);
 
-    // Filter by category
+  const getFilteredProducts = () => {
+    let baseList;
     if (selectedCategory !== "all") {
       if (selectedSubcategory) {
-        filtered = getProductsBySubcategory(selectedCategory, selectedSubcategory);
+        baseList = getProductsBySubcategoryLocalized(selectedCategory, selectedSubcategory, isArabic);
       } else {
-        filtered = getProductsByCategory(selectedCategory);
+        baseList = getProductsByCategoryLocalized(selectedCategory, isArabic);
       }
+    } else {
+      baseList = getAllProducts(isArabic);
     }
 
     // Always hide main products from display - only show series
-    filtered = filtered.filter(product => !product.isMainProduct);
+    let filtered = baseList.filter(product => !product.isMainProduct);
 
     // Filter by search term
     if (searchTerm) {
@@ -57,7 +62,7 @@ const Products = () => {
   };
 
   const filteredProducts = getFilteredProducts();
-  const currentCategory = categories.find(cat => cat.id === selectedCategory);
+  const currentCategory = localizedCategories.find(cat => cat.id === selectedCategory);
 
   const handleCategoryChange = (categoryId) => {
     setSelectedCategory(categoryId);
@@ -89,12 +94,14 @@ const Products = () => {
     setSearchParams(newSearchParams);
   };
 
+  const dirAlign = isArabic ? 'text-right' : 'text-left';
+
   return (
     <div className="min-h-screen bg-gray-50">
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">Our Products</h1>
-          <p className="text-gray-600 text-lg">Discover our comprehensive range of industrial ventilation and air movement solutions</p>
+          <h1 className="text-4xl font-bold text-gray-900 mb-4">{getTranslation('productsPageTitle', language)}</h1>
+          <p className="text-gray-600 text-lg">{getTranslation('productsPageSubtitle', language)}</p>
         </div>
 
         {/* Search and Filters */}
@@ -104,17 +111,17 @@ const Products = () => {
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="Search product series..."
+                  placeholder={getTranslation('searchSeriesPlaceholder', language)}
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full px-4 pr-10 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className={`w-full px-4 ${isArabic ? 'pl-10 pr-4' : 'pr-10'} py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent ${dirAlign}`}
                 />
                 {searchTerm && (
                   <button
                     type="button"
                     onClick={() => setSearchTerm("")}
-                    className="absolute inset-y-0 right-2 px-1 text-gray-400 hover:text-gray-600"
-                    aria-label="Clear search"
+                    className={`absolute inset-y-0 ${isArabic ? 'left-2' : 'right-2'} px-1 text-gray-400 hover:text-gray-600`}
+                    aria-label={getTranslation('clearSearch', language)}
                   >
                     ×
                   </button>
@@ -127,8 +134,8 @@ const Products = () => {
                 onChange={(e) => handleCategoryChange(e.target.value)}
                 className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
-                <option value="all">All Categories</option>
-                {categories.map((category) => (
+                <option value="all">{getTranslation('allCategories', language)}</option>
+                {localizedCategories.map((category) => (
                   <option key={category.id} value={category.id}>
                     {category.name}
                   </option>
@@ -142,7 +149,7 @@ const Products = () => {
                   onChange={(e) => handleSubcategoryChange(e.target.value)}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 >
-                  <option value="">All {currentCategory.name}</option>
+                  <option value="">{`${getTranslation('allPrefix', language)} ${currentCategory.name}`}</option>
                   {currentCategory.subcategories.map((subcategory) => (
                     <option key={subcategory.id} value={subcategory.id}>
                       {subcategory.name}
@@ -155,9 +162,9 @@ const Products = () => {
 
           {/* Results count */}
           <div className="text-sm text-gray-600 mb-4">
-            Showing {filteredProducts.length} product series
+            {getTranslation('showing', language)} {filteredProducts.length} {getTranslation('productSeriesLower', language)}
             {selectedCategory !== "all" && (
-              <span> in {currentCategory?.name}</span>
+              <span> {getTranslation('inLower', language)} {currentCategory?.name}</span>
             )}
             {selectedSubcategory && (
               <span> - {currentCategory?.subcategories?.find(sub => sub.id === selectedSubcategory)?.name}</span>
@@ -189,12 +196,12 @@ const Products = () => {
                 <div className="absolute inset-0 flex items-center justify-center bg-gray-100" style={{display: product.image ? 'none' : 'flex'}}>
                   <div className="text-6xl text-gray-400">{product.icon}</div>
                 </div>
-                <div className="absolute top-4 right-4 flex flex-col gap-2">
+                <div className={`absolute top-4 ${isArabic ? 'left-4' : 'right-4'} flex flex-col gap-2`}>
                   <span className="px-3 py-1 bg-blue-600 text-white text-sm rounded-full">
-                    {categories.find(cat => cat.id === product.category)?.name}
+                    {localizedCategories.find(cat => cat.id === product.category)?.name}
                   </span>
                   <span className="px-3 py-1 bg-green-600 text-white text-xs rounded-full">
-                    Series
+                    {getTranslation('seriesLabel', language)}
                   </span>
                 </div>
               </div>
@@ -202,41 +209,41 @@ const Products = () => {
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">{product.name}</h3>
                 {product.parentProduct && (
-                  <p className="text-sm text-blue-600 mb-2">Part of: {product.parentProduct}</p>
+                  <p className="text-sm text-blue-600 mb-2">{getTranslation('partOfLabel', language)} {product.parentProduct}</p>
                 )}
                 <p className="text-gray-600 mb-4 text-sm line-clamp-3">{product.description}</p>
                 
                 {/* Specifications */}
                 <div className="mb-4">
-                  <h4 className="font-semibold text-gray-900 mb-2">Key Specifications:</h4>
+                  <h4 className="font-semibold text-gray-900 mb-2">{getTranslation('keySpecifications', language)}</h4>
                   <div className="text-sm text-gray-600 space-y-1">
                     {product.specifications && product.specifications.wheelSizes && (
                       <div className="flex justify-between">
-                        <span>Wheel Sizes:</span>
+                        <span>{getTranslation('wheelSizesLabel', language)}</span>
                         <span className="font-medium text-xs">{product.specifications.wheelSizes}</span>
                       </div>
                     )}
                     {product.specifications && product.specifications.volume && (
                       <div className="flex justify-between">
-                        <span>Volume:</span>
+                        <span>{getTranslation('volumeLabel', language)}</span>
                         <span className="font-medium text-xs">{product.specifications.volume}</span>
                       </div>
                     )}
                     {product.specifications && product.specifications.volumeFlow && (
                       <div className="flex justify-between">
-                        <span>Volume Flow:</span>
+                        <span>{getTranslation('volumeFlowLabel', language)}</span>
                         <span className="font-medium text-xs">{product.specifications.volumeFlow}</span>
                       </div>
                     )}
                     {product.specifications && product.specifications.pressure && (
                       <div className="flex justify-between">
-                        <span>Pressure:</span>
+                        <span>{getTranslation('pressureLabel', language)}</span>
                         <span className="font-medium text-xs">{product.specifications.pressure}</span>
                       </div>
                     )}
                     {product.specifications && product.specifications.temperature && (
                       <div className="flex justify-between">
-                        <span>Temperature:</span>
+                        <span>{getTranslation('temperatureLabel', language)}</span>
                         <span className="font-medium text-xs">{product.specifications.temperature}</span>
                       </div>
                     )}
@@ -252,7 +259,7 @@ const Products = () => {
                   onClick={() => setSelectedProduct(product)}
                   className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-medium"
                 >
-                  View Details
+                  {getTranslation('viewDetails', language)}
                 </button>
               </div>
             </div>
@@ -262,8 +269,8 @@ const Products = () => {
         {/* No Results */}
         {filteredProducts.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No product series found matching your criteria.</p>
-            <p className="text-gray-400 text-sm mt-2">Try selecting a different category or adjusting your search terms.</p>
+            <p className="text-gray-500 text-lg">{getTranslation('noResultsTitle', language)}</p>
+            <p className="text-gray-400 text-sm mt-2">{getTranslation('noResultsHint', language)}</p>
           </div>
         )}
 
@@ -277,14 +284,14 @@ const Products = () => {
                     <h2 className="text-3xl font-bold text-gray-900 mb-2">{selectedProduct.name}</h2>
                     <div className="flex gap-2 mb-2">
                       <span className="px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full">
-                        {categories.find(cat => cat.id === selectedProduct.category)?.name}
+                        {localizedCategories.find(cat => cat.id === selectedProduct.category)?.name}
                       </span>
                       <span className="px-3 py-1 bg-green-100 text-green-800 text-sm rounded-full">
-                        Product Series
+                        {getTranslation('productSeriesLabel', language)}
                       </span>
                     </div>
                     {selectedProduct.parentProduct && (
-                      <p className="text-sm text-blue-600">Part of: {selectedProduct.parentProduct}</p>
+                      <p className="text-sm text-blue-600">{getTranslation('partOfLabel', language)} {selectedProduct.parentProduct}</p>
                     )}
                   </div>
                   <button
@@ -297,7 +304,7 @@ const Products = () => {
 
                 {/* Product Image in Modal */}
                 <div className="mb-6">
-                  <div className="relative h-64 bg-gray-200 rounded-lg overflow-hidden">
+                  <div className="relative h-[800px] bg-gray-200 rounded-lg overflow-hidden">
                     {selectedProduct.image ? (
                       <img
                         src={resolveAsset(selectedProduct.image)}
@@ -323,7 +330,7 @@ const Products = () => {
                 {/* Main Specifications */}
                 {selectedProduct.specifications && (
                   <div className="mb-8">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Specifications</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-4">{getTranslation('specificationsLabel', language)}</h3>
                     <div className="grid md:grid-cols-2 gap-4">
                       {Object.entries(selectedProduct.specifications).map(([key, value]) => (
                         <div key={key} className="bg-gray-50 p-4 rounded-lg">
@@ -342,7 +349,7 @@ const Products = () => {
                     onClick={() => setSelectedProduct(null)}
                     className="bg-gray-600 text-white py-2 px-6 rounded-lg hover:bg-gray-700 transition-colors duration-200"
                   >
-                    Close
+                    {getTranslation('close', language)}
                   </button>
                 </div>
               </div>
@@ -350,6 +357,16 @@ const Products = () => {
           </div>
         )}
       </main>
+
+      {/* Floating Software Button */}
+      <a
+        href="https://software.nobeleng.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`fixed bottom-6 ${isArabic ? 'left-6' : 'right-6'} z-40 inline-flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-blue-600 hover:bg-blue-700 text-white text-sm`}
+      >
+        {getTranslation('software', language)}
+      </a>
     </div>
   );
 };

@@ -42,6 +42,7 @@ const Footer = () => {
               <li><a href="/applications" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('applications', language)}</a></li>
               <li><a href="/about" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('about', language)}</a></li>
               <li><a href="/clients" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('clients', language)}</a></li>
+              <li><a href="https://software.nobeleng.com/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white hover:underline underline-offset-4 transition">{getTranslation('software', language)}</a></li>
             </ul>
           </div>
 
@@ -65,14 +66,14 @@ const Footer = () => {
               </p>
               <p className="flex items-start gap-3">
                 <svg className="w-5 h-5 text-gray-400 mt-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1 .9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-1 3l-7 4.5L5 7V6l7 4.5L19 6v1z"/></svg>
-                <span>{getTranslation('email', language)}: <a href="mailto:nobeleng@yahoo.com" className="underline hover:text-white">nobeleng@yahoo.com</a></span>
+                <span>{getTranslation('email', language)}: <a href="mailto:nobeleng@yahoo.com" className="underline hover:text:white">nobeleng@yahoo.com</a></span>
               </p>
               <div className="pt-2">
                 <p className="font-semibold text-gray-300 mb-2">{getTranslation('workingHours', language)}</p>
                 <ul className="space-y-1">
                   <li className="flex items-center justify-between text-gray-300">
                     <span className="text-sm">{getTranslation('weekdays', language)}</span>
-                    <span className="text-xs bg-white/10 text-gray-100 px-2 py-1 rounded-md">7:00 AM – 6:00 PM</span>
+                    <span className="text-xs bg:white/10 text-gray-100 px-2 py-1 rounded-md">7:00 AM – 6:00 PM</span>
                   </li>
                  
                 </ul>

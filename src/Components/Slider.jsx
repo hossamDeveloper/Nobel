@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
-import slider1 from '../assets/50-D3T6-8eR.jpg'
-import slider2 from '../assets/slider-2.jpg'
-import slider3 from '../assets/hero-image.jpg'
+import slider1 from '../assets/slider3.jpg'
+import slider2 from '../assets/slider22.jpeg'
+import slider3 from '../assets/slider1.jpg'
 import Skeleton from 'react-loading-skeleton'
 import { useLanguage } from '../utils/LanguageContext'
 import { getTranslation } from '../utils/translations'
@@ -13,7 +13,7 @@ const Slider = () => {
   
   const slides = [
     {
-      image: slider3,
+      image: slider1,
       title: getTranslation('nobelEngineeringExcellence', language),
       subtitle: getTranslation('yearsOfInnovation', language),
       description: getTranslation('leadingManufacturer', language)
@@ -25,7 +25,7 @@ const Slider = () => {
       description: getTranslation('equippedWithTechnology', language)
     },
     {
-      image: slider1,
+      image: slider3,
       title: getTranslation('advancedTechnologySolutions', language),
       subtitle: getTranslation('modernManufacturingExcellence', language),
       description: getTranslation('equippedWithTechnology', language)
@@ -142,6 +142,9 @@ const Slider = () => {
 }
 
 export default Slider
+
+
+
 
 
 

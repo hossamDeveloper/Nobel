@@ -1,5 +1,8 @@
 ﻿import heroImage from "../assets/about.jpeg";
 import Slider from "../Components/Slider";
+import exper from '../assets/experience.jpg';
+import tech from '../assets/tech.png';
+import madeIn from '../assets/made-in.png'
 import { categories, getCategories } from "../data/products";
 import { useNavigate } from "react-router-dom";
 import { resolveAsset } from "../utils/assetResolver";
@@ -59,7 +62,7 @@ const Home = () => {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-               <img src="src/assets/experience.jpg" className="rounded-lg" alt="" />
+               <img src={resolveAsset(exper)} className="rounded-lg" alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('yearsExperience', language)}
@@ -70,7 +73,7 @@ const Home = () => {
             </div>
             <div className="text-center">
               <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-              <img src="src/assets/tech.png" alt="" />
+              <img src={resolveAsset(tech)} alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('modernTechnology', language)}
@@ -81,7 +84,7 @@ const Home = () => {
             </div>
             <div className="text-center">
               <div className="w-28 h-28 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <img src="src/assets/made-in.png" alt="" />
+                <img src={resolveAsset(madeIn)} alt="" />
               </div>
               <h3 className="text-xl font-semibold mb-3">
                 {getTranslation('madeInEgypt', language)}

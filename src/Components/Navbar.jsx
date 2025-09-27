@@ -364,7 +364,7 @@ const Navbar = () => {
               </button>
 
               {showContactDropdown && (
-                <div className="absolute top-full left-0 mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-30 overflow-hidden">
+                <div className={`absolute top-full ${isArabic? 'right-0':'left-0'} mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-30 overflow-hidden`}>
                   <div className="p-4">
                     <h3 className="text-lg font-semibold text-gray-800 mb-3">
                       {getTranslation("contactInformation", language)}

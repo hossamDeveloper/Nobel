@@ -3,14 +3,14 @@ export const categories = [
     id: "centrifugal-fan",
     name: "Centrifugal Fan",
     description: "Heavy-duty centrifugal fans for industrial ventilation and air movement applications with high efficiency and reliability.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/nbd.png",
     subcategories: []
   },
   {
     id: "axial-fans",
     name: "Axial Fans Ventilation",
     description: "High-performance axial fans designed for efficient air circulation in various industrial and commercial applications.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/nead.png",
 
     subcategories: []
   },
@@ -18,7 +18,7 @@ export const categories = [
     id: "roof-top-fans",
     name: "Roof Top Fans",
     description: "Durable roof-mounted fans for building ventilation systems with weather-resistant construction.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/axial-roof-fans-ne-serie.png",
 
     subcategories: []
   },
@@ -26,7 +26,7 @@ export const categories = [
     id: "air-filtering",
     name: "Air Filtering System",
     description: "Advanced air filtration systems for clean air management in industrial environments and production facilities.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/seafp.png",
 
     subcategories: []
   },
@@ -34,7 +34,7 @@ export const categories = [
     id: "custom-ventilators",
     name: "Custom Ventilators",
     description: "Bespoke ventilation solutions tailored to specific industrial requirements and challenging applications.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/cv.png",
 
     subcategories: []
   },
@@ -42,7 +42,7 @@ export const categories = [
     id: "accessories",
     name: "Accessories",
     description: "Complete range of ventilation accessories including dampers, grilles, and mounting systems.",
-    image: "src/assets/hero-image.jpg",
+    image: "https://www.glacier-technology.com/wp-content/uploads/2019/11/Damper-Category-Collage-1.png",
 
     subcategories: []
   },
@@ -50,7 +50,7 @@ export const categories = [
     id: "smoke-axial",
     name: "Smoke Axial Inline Fans",
     description: "Specialized smoke extraction fans for fire safety systems in buildings, tunnels, and parking areas.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/axial-inline-smoke-bifurcated-fans-nsaf1-series.png",
 
     subcategories: []
   },
@@ -58,7 +58,7 @@ export const categories = [
     id: "smoke-centrifugal",
     name: "Smoke Centrifugal Fans",
     description: "High-temperature centrifugal fans designed for smoke evacuation in emergency ventilation systems.",
-    image: "src/assets/hero-image.jpg",
+    image: "src/assets/nprs.png",
 
     subcategories: []
   }
@@ -126,16 +126,7 @@ export const generateAllProducts = () => {
             temperature: "up to 90 C and up to 400 C with shaft cooler and hollow shaft"
           }
         },
-        {
-          name: "BACKWARD BLADE FLAT PROFILE - NPE series",
-          description: "Suitable for severe and difficult application and for the various industrial applications where a complete reliability of the product is necessary. Application sectors are pneumatic transportation, chemical industries, silos and metallurgic industries.",
-          image: "src/assets/slider-1.jpg",
-          specifications: {
-            volume: "from 500 m3/h up to 100000 m3/h",
-            pressure: "from 150 mm/H20 up to 1000 mm/H20",
-            temperature: "up to 90 C and up to 400 C with shaft cooler and hollow shaft"
-          }
-        }
+       
       ]
     },
     {
@@ -153,36 +144,8 @@ export const generateAllProducts = () => {
         pressure: "up to 700 mm/H20"
       },
       series: [
-        {
-          name: "BACKWARD BLADES - NTRO series",
-          description: "These types of fan are designed for the handling of air, fumes or gases or where light concentration of dust or material are present.",
-          image: "src/assets/slider-2.jpg",
-          specifications: {
-            wheelSizes: "300 mm up to 1600 mm",
-            volume: "from 1000 m3/h up to 100000 m3/h",
-            pressure: "up to 700 mm/H2o"
-          }
-        },
-        {
-          name: "RADIAL BLADES - NTRA series",
-          description: "This type of fan is designed for the handling of air, fumes or gases either clean or containing dry granular material, dust exhaust from buffing and grinding wheels, conveying all types of materials.",
-          image: "src/assets/50-D3T6-8eR.jpg",
-          specifications: {
-            wheelSizes: "300 mm up to 1600 mm",
-            volume: "from 1000 m3/h up to 100000 m3/h",
-            pressure: "up to 700 mm/H2o"
-          }
-        },
-        {
-          name: "OPEN BLADES - NTAP series",
-          description: "This type of fan is designed to convey or handle air or gases containing material. It is ideal for sticky, heavy or abrasive dust problems.",
-          image: "src/assets/hero-image.jpg",
-          specifications: {
-            wheelSizes: "300 mm up to 1600 mm",
-            volume: "from 1000 m3/h up to 100000 m3/h",
-            pressure: "up to 700 mm/H2o"
-          }
-        }
+       
+        
       ]
     },
     {
@@ -199,37 +162,11 @@ export const generateAllProducts = () => {
         pressure: "5 mm/H20 up to 150 mm/H20"
       },
       series: [
+       
         {
-          name: "IN LINE",
-          description: "Suited to ventilate and convey clean air up to a maximum temperature of 60C. The low noise level and the medium pressure head make them ideal for industrial and residential installations.",
-          image: "src/assets/slider-1.jpg",
-          specifications: {
-            volume: "from 100 m3/h up to 250000 m3/h",
-            pressure: "from 5 mm/H20 up to 110 mm/H20"
-          }
-        },
-        {
-          name: "DIRECT DRIVE DOUBLE INLET",
-          description: "Suited to ventilate and convey clean air up to a maximum temperature of 400C. The low noise level and the high compactness head make them ideal in ventilation plants with limited space like offices and shops.",
-          image: "src/assets/slider-2.jpg",
-          specifications: {
-            volume: "from 200 m3/h up to 6500 m3/h",
-            pressure: "from 10 mm/H20 up to 80 mm/H20"
-          }
-        },
-        {
-          name: "DOUBLE INLET BELT DRIVEN",
-          description: "Suitable where air extracting or filtering is necessary. The low noise level head makes them ideal for environments like offices, bars, and gymnasiums.",
-          image: "src/assets/50-D3T6-8eR.jpg",
-          specifications: {
-            volume: "from 750 m3/h up to 500000 m3/h",
-            pressure: "from 30 mm/H20 up to 150 mm/H20"
-          }
-        },
-        {
-          name: "PLUG FAN - NPLG series",
+          name: "PLUG FAN - NP series",
           description: "In most instances, plug fans are unhoused and rely on the plenum space around the wheel to direct airflow as required in the system. This style of fan designed with the motor, bearings, and drives out of the airstream.",
-          image: "src/assets/hero-image.jpg",
+          image: "src/assets/np.png",
           specifications: {
             volume: "up to 7000 cfm (118931m3/hr)",
             pressure: "Maximum pressures of 8 in. wg (1984 Pa)",
@@ -254,9 +191,9 @@ export const generateAllProducts = () => {
       },
       series: [
         {
-          name: "RING - NEA/D series",
+          name: "Axial inline - NEA/D series",
           description: "The NEA/D series are primarily designed for air ventilation, either supply or exhaust duty.",
-          image: "src/assets/slider-1.jpg",
+          image: "src/assets/nead.png",
           specifications: {
             wheelSizes: "400 mm up to 1000 mm",
             volume: "from 1000 m3/h up to 43000 m3/h",
@@ -283,16 +220,7 @@ export const generateAllProducts = () => {
             pressure: "from 5 mm/H20 up to 100 mm/H20"
           }
         },
-        {
-          name: "DUCTED DIRECT DRIVEN - EIH series",
-          description: "Suitable for the exhaust of smoke, dusty foul and humid air up to a maximum temperature of 600C.",
-          image: "src/assets/hero-image.jpg",
-          specifications: {
-            wheelSizes: "400 mm up to 2240 mm",
-            volume: "from 1200 m3/h up to 250000 m3/h",
-            pressure: "from 5 mm/H20 up to 100 mm/H20"
-          }
-        },
+       
         {
           name: "DUCTED DOUBLE INLET FANS - NEI2/D series",
           description: "Suitable for the exhaust of smoke, dusty foul and humid air up to a maximum temperature of 60C. The product has been especially developed and designed to create the required ventilation within tunnels.",
@@ -300,7 +228,7 @@ export const generateAllProducts = () => {
           specifications: {
             wheelSizes: "500 mm up to 1250 mm",
             volume: "from 18000 m3/h up to 175000 m3/h",
-            pressure: "from 152 newton up to newton"
+            pressure: "from 152 newton up to 2100 newton"
           }
         }
       ]
@@ -359,7 +287,7 @@ export const generateAllProducts = () => {
         {
           name: "CARTRIDGE EXTRACTION AND FILTRATION PLANTS",
           description: "Cartridges filter at high efficiency also with very thin dust. The limited sizes allow the installation inside of the production plants and close to the source of pollution. Suitable for use by chemical, foodstuff, metallurgic and ceramic working industries.",
-          image: "src/assets/slider-2.jpg",
+          image: "src/assets/ceafp.png",
           specifications: {
             volume: "up to 150000 m3/h"
           }
@@ -367,7 +295,7 @@ export const generateAllProducts = () => {
         {
           name: "SLEEVES EXTRACTION AND FILTRATION PLANTS",
           description: "Sleeves filter at high efficiency. Suitable in all environment where there is a need to separate dry dust. Suitable for use by chemical, petrochemical and ceramic working industries.",
-          image: "src/assets/50-D3T6-8eR.jpg",
+          image: "src/assets/seafp.png",
           specifications: {
             volume: "up to 250000 m3/h"
           }
@@ -375,7 +303,7 @@ export const generateAllProducts = () => {
         {
           name: "ACTIVE COAL FILTRATION PLANTS",
           description: "Compact filtration plant easy to move. Environments where industrial processes creates gas and smoke emissions. Smokes exhausted are profiteered and conveyed to the absolute filter of large loss surface.",
-          image: "src/assets/hero-image.jpg",
+          image: "src/assets/acfp.png",
           specifications: {
             volume: "up to 2000 m3/h",
             pressure: "up to 50 mm/H20"
@@ -400,7 +328,7 @@ export const generateAllProducts = () => {
         {
           name: "CUSTOM VENTILATORS",
           description: "NOBEL custom-engineered products are designed to answer to exacting specifications. Designs meet specific flow, pressure, temperature, leak integrity, and configuration requirements. NOBEL technical department is at your disposal to study the project.",
-          image: "src/assets/slider-1.jpg",
+          image: "src/assets/cv.png",
           specifications: {
             design: "Custom specifications",
             flow: "Specific flow requirements",
@@ -428,7 +356,7 @@ export const generateAllProducts = () => {
         {
           name: "DAMPERS",
           description: "A damper is a valve or plate that stops or regulates the flow of air inside a duct, chimney, VAV box, air handler, or other air handling equipment. A damper may be used to cut off central air conditioning (heating or cooling) to an unused room, or to regulate it for room-by-room temperature and climate control.",
-          image: "src/assets/slider-2.jpg",
+          image: "https://www.glacier-technology.com/wp-content/uploads/2019/11/Damper-Category-Collage-1.png",
           specifications: {
             operation: "Manual or automatic",
             control: "Electric or pneumatic motors",
@@ -515,9 +443,9 @@ export const generateAllProducts = () => {
       },
       series: [
         {
-          name: "Centrifugal smoke Fan - VBRS series",
+          name: "Centrifugal smoke Fan - NBRS series",
           description: "This series is used for smoke evacuation from various types of buildings. It can achieve a wider static pressure range than axial fans and is more durable due to its reinforced construction, capable of withstanding temperatures exceeding 900C.",
-          image: "src/assets/slider-2.jpg",
+          image: "src/assets/nprs.png",
           specifications: {
             wheelSizes: "310 mm up to 1800 mm",
             volume: "from 2000 m3/h up to 250000 m3/h",

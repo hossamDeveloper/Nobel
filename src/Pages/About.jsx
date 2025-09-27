@@ -118,7 +118,10 @@ const About = () => {
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <img className="w-full h-full object-cover rounded-full" src="https://media.istockphoto.com/id/2218717748/photo/construction-safety-helmet-for-worker-3d-render-icon-yellow-builder-engineer-or-contractor.webp?a=1&b=1&s=612x612&w=0&k=20&c=UP8xTQcHPy69E20gQ-do7dBIo7hCtONgPR0MMChTVpw=" alt="" />
+
+              </div>
               <h3 className="text-lg font-semibold text-gray-900">
                 {getTranslation("engineeringTeam", language)}
               </h3>
@@ -127,7 +130,10 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+              <img className="w-full h-full object-cover rounded-full" src="https://media.istockphoto.com/id/2218717748/photo/construction-safety-helmet-for-worker-3d-render-icon-yellow-builder-engineer-or-contractor.webp?a=1&b=1&s=612x612&w=0&k=20&c=UP8xTQcHPy69E20gQ-do7dBIo7hCtONgPR0MMChTVpw=" alt="" />
+
+              </div>
               <h3 className="text-lg font-semibold text-gray-900">
                 {getTranslation("projectManagers", language)}
               </h3>
@@ -136,7 +142,9 @@ const About = () => {
               </p>
             </div>
             <div className="text-center">
-              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4"></div>
+              <div className="w-24 h-24 bg-gray-200 rounded-full mx-auto mb-4 flex items-center justify-center">
+                <img className="w-full h-full object-cover rounded-full" src="https://media.istockphoto.com/id/2218717748/photo/construction-safety-helmet-for-worker-3d-render-icon-yellow-builder-engineer-or-contractor.webp?a=1&b=1&s=612x612&w=0&k=20&c=UP8xTQcHPy69E20gQ-do7dBIo7hCtONgPR0MMChTVpw=" alt="" />
+              </div>
               <h3 className="text-lg font-semibold text-gray-900">
                 {getTranslation("supportStaff", language)}
               </h3>

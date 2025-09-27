@@ -26,9 +26,9 @@ const Slider = () => {
     },
     {
       image: slider3,
-      title: getTranslation('advancedTechnologySolutions', language),
-      subtitle: getTranslation('modernManufacturingExcellence', language),
-      description: getTranslation('equippedWithTechnology', language)
+      title: getTranslation('globalTrust', language),
+      subtitle: getTranslation('sustainableSolutions', language),
+      description: getTranslation('commitmentQuality', language)
     }
   ]
 
@@ -124,12 +124,12 @@ const Slider = () => {
         ))}
       </div>
 
-      <div className={`absolute bottom-4 ${isArabic ? 'right-4' : 'left-1/2 transform -translate-x-1/2'} flex ${isArabic ? 'space-x-reverse' : 'space-x-2'} ${isArabic ? 'space-x-2' : ''}`}>
+      <div className={`absolute bottom-4 left-1/2 transform -translate-x-1/2 flex ${isArabic ? 'space-x-reverse' : 'space-x-2'}`}>
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-200 ${
+            className={`w-3 h-3 rounded-full transition-all duration-200 mx-2 ${
               index === currentSlide 
                 ? 'bg-white' 
                 : 'bg-white bg-opacity-50 hover:bg-opacity-75'
@@ -142,6 +142,7 @@ const Slider = () => {
 }
 
 export default Slider
+
 
 
 

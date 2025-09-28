@@ -90,7 +90,7 @@ export const generateAllProducts = () => {
       series: [
         {
           name: "BACKWARD BLADE WING PROFILE - NBA series",
-          description: "Low noise. For a fan the source of noise is mainly the airturbulence created by the impeller. The NBA series has been created to obtain the lowest noise thank to the aerodynamic profile of the inlet cone and of the static and dynamic balancing of the impeller",
+          description: "Low noise. For a fan the source of noise is mainly the air turbulence created by the impeller. The NBA series has been created to obtain the lowest noise thank to the aerodynamic profile of the inlet cone and of the static and dynamic balancing of the impeller",
           image: "src/assets/products/nba.png",
           specifications: {
             volume: "from 2000 m3/h up to 250000 m3/h",
@@ -207,7 +207,7 @@ export const generateAllProducts = () => {
           description: "The NET/D series are primarily designed for air ventilation, either supply or exhaust duty.",
           image: "src/assets/products/netd.png",
           specifications: {
-            wheelSizes: "250 mm up to 710 mm",
+            wheelSizes: "250 mm up to 1250 mm",
             volume: "from 600 m3/h to 180000 m3/h",
             pressure: "from 3 mm/H20 up to 25 mm/H20"
           }
@@ -251,11 +251,11 @@ export const generateAllProducts = () => {
       },
       series: [
         {
-          name: "AXIAL ROOF FANS - NE series",
+          name: "AXIAL ROOF FANS - NRT series",
           description: "The NE series is widely used in civil and industrial ventilation plants. They are mainly suitable as exhausters for high air volumes. The maximum of the fluid in continuous operation is 400C.",
           image: "src/assets/products/axial-roof-fans-ne-serie.png",
           specifications: {
-            wheelSizes: "400 mm up to 900 mm",
+            wheelSizes: "250 mm up to 900 mm",
             volume: "from 2300 m3/h up to 530000 m3/h",
             pressure: "up to 2 mm/h20 up to 30 mm/h2O"
           }
@@ -265,9 +265,9 @@ export const generateAllProducts = () => {
           description: "The NC series is widely used in civil and industrial ventilation plants. They are mainly suitable as air exhausters. The maximum of the fluid in continuous operation is 400C.",
           image: "src/assets/products/nc.png",
           specifications: {
-            wheelSizes: "210 mm up to 620 mm",
-            volume: "from 300 m3/h up to 20000 m3/h",
-            pressure: "up to 2 mm/h20 up to 65 mm/h2O"
+            wheelSizes: "310 mm up to 1240 mm",
+            volume: "from 300 m3/h up to 120000 m3/h",
+            pressure: "up to 2 mm/h20 up to 120000 mm/h2O"
           }
         }
       ]

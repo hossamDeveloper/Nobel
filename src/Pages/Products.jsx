@@ -94,6 +94,7 @@ const Products = () => {
     setSearchParams(newSearchParams);
   };
 
+
   const dirAlign = isArabic ? 'text-right' : 'text-left';
 
   return (
@@ -304,12 +305,12 @@ const Products = () => {
 
                 {/* Product Image in Modal */}
                 <div className="mb-6">
-                  <div className="relative h-[800px] bg-gray-200 rounded-lg overflow-hidden">
+                  <div className="relative h-[450px] bg-gray-200 rounded-lg overflow-hidden flex justify-center">
                     {selectedProduct.image ? (
                       <img
                         src={resolveAsset(selectedProduct.image)}
                         alt={selectedProduct.name}
-                        className="w-full h-full object-cover"
+                        className="max-w-full max-h-full object-fill "
                         onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextSibling.style.display = 'flex';
@@ -335,7 +336,7 @@ const Products = () => {
                       {Object.entries(selectedProduct.specifications).map(([key, value]) => (
                         <div key={key} className="bg-gray-50 p-4 rounded-lg">
                           <h4 className="font-semibold text-gray-900 capitalize mb-2">
-                            {key.replace(/([A-Z])/g, ' ').trim()}
+                            {key === 'wheelSizes'? key.slice(0, 5) + ' ' + key.slice(5) : key}
                           </h4>
                           <p className="text-gray-600">{value}</p>
                         </div>

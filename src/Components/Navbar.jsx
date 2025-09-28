@@ -519,8 +519,7 @@ const Navbar = () => {
                         </p>
                         <div className="text-sm text-gray-600 space-y-1">
                           <p>{contactInfo.workingHours.weekdays}</p>
-                          <p>{contactInfo.workingHours.saturday}</p>
-                          <p>{contactInfo.workingHours.sunday}</p>
+                       
                         </div>
                       </div>
                     </div>

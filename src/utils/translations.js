@@ -24,9 +24,7 @@ export const translations = {
     viewOnGoogleMaps: "View on Google Maps",
 
     // Working Hours
-    weekdays: "Mon – Fri: 7:00 AM – 6:00 PM",
-    saturday: "Sat: 7:00 AM – 6:00 PM",
-    sunday: "Sun: 8:00 AM – 6:00 PM",
+    weekdays: "Sat – Fri: 9:00 AM – 5:00 PM",
 
     // Language
     switchToArabic: "التبديل إلى العربية",
@@ -63,7 +61,7 @@ export const translations = {
       "14th helmy abd el aty st. eight zone nasr city cairo egypt",
     viewLocationOnGoogleMaps: "View location on Google Maps",
     openHours: "Open Hours",
-    openHoursTime: "Mon To Fri 7:00 AM - 6:00 PM",
+    openHoursTime: "Sat To Fri 9:00 AM - 5:00 PM",
     mailUs: "Mail Us",
     mailUsEmail: "nobeleng@yahoo.com",
     nobelIndustrialFansAlt: "NOBEL Industrial Fans",
@@ -182,9 +180,8 @@ export const translations = {
     viewOnGoogleMaps: "عرض على خرائط جوجل",
 
     // Working Hours
-    weekdays: "الاثنين - الجمعة: 7:00 ص - 6:00 م",
-    saturday: "السبت: 7:00 ص - 6:00 م",
-    sunday: "الأحد: 8:00 ص - 6:00 م",
+    weekdays: "السبت - الجمعة: 9:00 ص - 5:00 م",
+
 
     // Language
     switchToArabic: "التبديل إلى العربية",
@@ -201,7 +198,7 @@ export const translations = {
     discoverWhoAreNobel: "اكتشف من نحن نوبل ؟",
     nobelBuildsValueInAir: "نوبل تبني القيمة في الهواء",
     nobelDescription:
-      "نوبل هي شركة تعمل منذ أكثر من 25 عاماً في قطاع التهوية من خلال إنتاج أنواع مختلفة من المراوح الصناعية الثقيلة التي يتم تصنيعها وتجميعها بالكامل في مصر. نوبل هي الشركة القادرة على توفير حلول تهوية هوائية غير مكلفة وموثوقة وفعالة حيث أن قسم الإنتاج لدينا مجهز بتقنيات حديثة مثل القطع بالليزر وآلات النقش بالكمبيوتر والموازنة الثابتة والديناميكية وغيرها.",
+      "نوبل هي شركة تعمل منذ أكثر من 25 عاماً في قطاع التهوية من خلال إنتاج أنواع مختلفة من المراوح الصناعية الثقيلة التي يتم تصنيعها وتجميعها بالكامل في مصر. نوبل هي الشركة القادرة على توفير حلول تهوية هوائية غير مكلفة وموثوقة وفعالة حيث أن قسم الإنتاج لدينا مجهز بتقنيات حديثة مثل القطع بالليزر وآلات النقش بالكمبيوتر والاتزان الاستاتيكي والديناميكي وغيرها.",
     whyChooseNobel: "لماذا تختار نوبل؟",
     yearsExperience: "خبرة أكثر من 25 عاماً",
     yearsExperienceDesc: "أكثر من 25 عاماً في قطاع التهوية",
@@ -221,13 +218,13 @@ export const translations = {
       "14 شارع حلمي عبد العاطي المنطقة الثامنة مدينة نصر القاهرة مصر",
     viewLocationOnGoogleMaps: "عرض الموقع على خرائط جوجل",
     openHours: "ساعات العمل",
-    openHoursTime: "الاثنين إلى الجمعة 7:00 ص - 6:00 م",
+    openHoursTime: "السبت إلى الجمعة 9:00 ص - 5:00 م",
     mailUs: "راسلنا",
     mailUsEmail: "nobeleng@yahoo.com",
     nobelIndustrialFansAlt: "مراوح نوبل الصناعية",
 
     // Global Software
-    software: "البرمجيات",
+    software: "البرنامج",
 
     // Slider
     nobelEngineeringExcellence: "تميز نوبل الهندسي",

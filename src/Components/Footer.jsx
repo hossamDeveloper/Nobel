@@ -73,7 +73,7 @@ const Footer = () => {
                 <ul className="space-y-1">
                   <li className="flex items-center justify-between text-gray-300">
                     <span className="text-sm">{getTranslation('weekdays', language)}</span>
-                    <span className="text-xs bg:white/10 text-gray-100 px-2 py-1 rounded-md">7:00 AM – 6:00 PM</span>
+                    
                   </li>
                  
                 </ul>

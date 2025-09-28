@@ -22,14 +22,7 @@ export const categories = [
 
     subcategories: []
   },
-  {
-    id: "air-filtering",
-    name: "Air Filtering System",
-    description: "Advanced air filtration systems for clean air management in industrial environments and production facilities.",
-    image: "src/assets/seafp.png",
-
-    subcategories: []
-  },
+ 
   {
     id: "custom-ventilators",
     name: "Custom Ventilators",
@@ -38,14 +31,7 @@ export const categories = [
 
     subcategories: []
   },
-  {
-    id: "accessories",
-    name: "Accessories",
-    description: "Complete range of ventilation accessories including dampers, grilles, and mounting systems.",
-    image: "https://www.glacier-technology.com/wp-content/uploads/2019/11/Damper-Category-Collage-1.png",
 
-    subcategories: []
-  },
   {
     id: "smoke-axial",
     name: "Smoke Axial Inline Fans",
@@ -61,7 +47,23 @@ export const categories = [
     image: "src/assets/nprs.png",
 
     subcategories: []
-  }
+  },
+  {
+    id: "air-filtering",
+    name: "Air Filtering System",
+    description: "Advanced air filtration systems for clean air management in industrial environments and production facilities.",
+    image: "src/assets/seafp.png",
+
+    subcategories: []
+  },
+  {
+    id: "accessories",
+    name: "Accessories",
+    description: "Complete range of ventilation accessories including dampers, grilles, and mounting systems.",
+    image: "https://www.glacier-technology.com/wp-content/uploads/2019/11/Damper-Category-Collage-1.png",
+
+    subcategories: []
+  },
 ];
 
 // Helper function to generate all products including series

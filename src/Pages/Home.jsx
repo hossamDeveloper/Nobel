@@ -1,5 +1,5 @@
-﻿import heroImage from "../assets/about.jpeg";
-import Slider from "../Components/Slider";
+﻿import Slider from "../Components/Slider";
+import heroImage from "../assets/about.jpeg";
 import exper from '../assets/experience.jpg';
 import tech from '../assets/tech.png';
 import madeIn from '../assets/made-in.png'

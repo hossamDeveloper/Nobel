@@ -263,7 +263,7 @@ export const generateAllProducts = () => {
         {
           name: "CENTRIFUGAL ROOF FANS - NC series",
           description: "The NC series is widely used in civil and industrial ventilation plants. They are mainly suitable as air exhausters. The maximum of the fluid in continuous operation is 400C.",
-          image: "src/assets/products/nc.png",
+          image: "https://img.directindustry.com/images_di/photo-mg/5369-12799632.jpg",
           specifications: {
             wheelSizes: "310 mm up to 1240 mm",
             volume: "from 300 m3/h up to 120000 m3/h",
@@ -297,7 +297,7 @@ export const generateAllProducts = () => {
         {
           name: "SLEEVES EXTRACTION AND FILTRATION PLANTS",
           description: "Sleeves filter at high efficiency. Suitable in all environment where there is a need to separate dry dust. Suitable for use by chemical, petrochemical and ceramic working industries.",
-          image: "src/assets/seafp.png",
+          image: "src/assets/seafp.webp",
           specifications: {
             volume: "up to 250000 m3/h"
           }

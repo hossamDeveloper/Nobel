@@ -52,7 +52,7 @@ export const categories = [
     id: "air-filtering",
     name: "Air Filtering System",
     description: "Advanced air filtration systems for clean air management in industrial environments and production facilities.",
-    image: "src/assets/seafp.png",
+    image: "src/assets/seafp.webp",
 
     subcategories: []
   },
@@ -394,13 +394,13 @@ export const generateAllProducts = () => {
       },
       series: [
         {
-          name: "Axial inline smoke bifurcated fans - NSAF/1 series",
+          name: "Axial inline smoke bifurcated fans - NEIDS series",
           description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where it's from the highest recommended fan types when the high total and static efficiencies are required since due to the aerodynamic airfoil and also the fan body profile which achieves the minimum losses in the air flow due to pressure drag which makes it from the minimum power consumers",
           image: "src/assets/products/axial-inline-smoke-bifurcated-fans-nsaf1-series.png",
           specifications: {
             wheelSizes: "300 mm up to 2000 mm",
             volume: "from 1000 m3/h up to 200000 m3/h",
-            pressure: "from 5 mm/H20 up to 300 mm/H20",
+            pressure: "from 5 mm/H20 up to 100 mm/H20",
             motor: "thermal insulation (class F)"
           }
         },

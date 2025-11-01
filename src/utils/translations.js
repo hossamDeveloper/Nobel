@@ -153,6 +153,15 @@ export const translations = {
     pressureLabel: "Pressure:",
     temperatureLabel: "Temperature:",
     close: "Close",
+
+    // Certifications Page
+    certificationsSubtitle: "Our certifications and accreditations",
+    iso9001Name: "ISO 9001:2015",
+    iso9001Desc: "Quality Management System certification demonstrating our commitment to maintaining the highest standards in quality assurance and customer satisfaction.",
+    eosName: "EOS Certification",
+    eosDesc: "Professional certification recognizing excellence in engineering and operational standards.",
+    universityName: "University Partnership",
+    universityDesc: "Academic partnership and certification recognizing our commitment to educational excellence and knowledge sharing.",
   },
 
   ar: {
@@ -308,6 +317,15 @@ commitmentQuality: 'ملتزمون بالمعايير الدولية للجود�
     pressureLabel: "الضغط:",
     temperatureLabel: "درجة الحرارة:",
     close: "إغلاق",
+
+    // Certifications Page
+    certificationsSubtitle: "شهاداتنا واعتماداتنا",
+    iso9001Name: "ISO 9001:2015",
+    iso9001Desc: "شهادة نظام إدارة الجودة التي تثبت التزامنا بالحفاظ على أعلى المعايير في ضمان الجودة ورضا العملاء.",
+    eosName: "شهادة EOS",
+    eosDesc: "شهادة احترافية تعترف بالتميز في المعايير الهندسية والتشغيلية.",
+    universityName: "شراكة جامعية",
+    universityDesc: "شراكة أكاديمية وشهادة تعترف بالتزامنا بالتميز التعليمي وتبادل المعرفة.",
   },
 };
 

@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import slider1 from '../assets/slider3.jpg'
 import slider2 from '../assets/slider22.jpeg'
 import slider3 from '../assets/slider1.jpg'
+import slider4 from '../assets/slider4.jpeg'
+import slider5 from '../assets/slider5.jpeg'
 import Skeleton from 'react-loading-skeleton'
 import { useLanguage } from '../utils/LanguageContext'
 import { getTranslation } from '../utils/translations'
@@ -9,7 +11,7 @@ import { getTranslation } from '../utils/translations'
 const Slider = () => {
   const { language, isArabic } = useLanguage()
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [loaded, setLoaded] = useState([false, false, false])
+  const [loaded, setLoaded] = useState([false, false, false, false, false])
   
   const slides = [
     {
@@ -29,6 +31,22 @@ const Slider = () => {
       title: getTranslation('globalTrust', language),
       subtitle: getTranslation('sustainableSolutions', language),
       description: getTranslation('commitmentQuality', language)
+    },
+    {
+      image: slider4,
+      title: isArabic ? 'NBXI مراوح داخل مجرى الهواء' : 'NBXI Inline Centrifugal Fans',
+      subtitle: isArabic ? 'تدفق قوي وتركيب موفّر للمساحة' : 'Powerful airflow, space‑saving installs',
+      description: isArabic
+        ? 'مراوح طرد مركزي داخلية NBXI لتدفق قوي مع تركيب موفّر للمساحة وكفاءة تشغيلية عالية.'
+        : 'NBXI centrifugal inline fans deliver powerful airflow with space‑saving installs and high operating efficiency.'
+    },
+    {
+      image: slider5,
+      title: isArabic ? 'Fan Section صندوقية مزدوجة المدخل' : 'Fan Section Double‑Inlet Box Fans',
+      subtitle: isArabic ? 'عزل صوتي ممتاز وكفاءة تهوية عالية' : 'Superior acoustic insulation, high‑efficiency airflow',
+      description: isArabic
+        ? 'وحدات Fan Section مزدوجة المدخل لعزل صوتي ممتاز وتدفق هواء فعّال للتكييف والترشيح.'
+        : 'Fan Section double‑inlet box units provide superior acoustic insulation and efficient airflow for HVAC and filtration.'
     }
   ]
 
@@ -96,7 +114,7 @@ const Slider = () => {
             <img 
               src={slide.image}
               alt={slide.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
               loading={index === 0 ? 'eager' : 'lazy'}
               decoding="async"
               fetchpriority={index === 0 ? 'high' : 'low'}
@@ -112,7 +130,7 @@ const Slider = () => {
                 <h2 className="text-xl md:text-2xl font-semibold mb-4 text-blue-300">
                   {slide.subtitle}
                 </h2>
-                <p className="text-lg md:text-xl mb-8 opacity-90">
+                <p className="text-lg md:text-xl mb-8 opacity-90 text-center">
                   {slide.description}
                 </p>
                 <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg text-lg font-medium transition-colors duration-200">
@@ -142,6 +160,8 @@ const Slider = () => {
 }
 
 export default Slider
+
+
 
 
 

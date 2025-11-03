@@ -88,16 +88,16 @@ export const generateAllProducts = () => {
         pressure: "up to 1800 mm/h20"
       },
       series: [
-        {
-          name: "BACKWARD BLADE WING PROFILE - NBA series",
-          description: "Low noise. For a fan the source of noise is mainly the air turbulence created by the impeller. The NBA series has been created to obtain the lowest noise thank to the aerodynamic profile of the inlet cone and of the static and dynamic balancing of the impeller",
-          image: "src/assets/products/nba.png",
-          specifications: {
-            volume: "from 2000 m3/h up to 250000 m3/h",
-            pressure: "from 20 mm/H20 up to 350mm/H20",
-            temperature: "up to 300 C"
-          }
-        },
+        // {
+        //   name: "BACKWARD BLADE WING PROFILE - NBA series",
+        //   description: "Low noise. For a fan the source of noise is mainly the air turbulence created by the impeller. The NBA series has been created to obtain the lowest noise thank to the aerodynamic profile of the inlet cone and of the static and dynamic balancing of the impeller",
+        //   image: "src/assets/products/nba.png",
+        //   specifications: {
+        //     volume: "from 2000 m3/h up to 250000 m3/h",
+        //     pressure: "from 20 mm/H20 up to 350mm/H20",
+        //     temperature: "up to 300 C"
+        //   }
+        // },
         {
           name: "BACKWARD BLADE FLAT PROFILE - NBR series",
           description: "Low noise. For a fan the source of noise is mainly the air turbulence created by the impeller. The NBR series has been created to obtain the lowest noise thank to the aerodynamic profile of the inlet cone and of the static and dynamic balancing of the impeller.",
@@ -127,6 +127,38 @@ export const generateAllProducts = () => {
             pressure: "from 100 mm/H20 up to 1000 mm/H20",
             temperature: "up to 90 C and up to 400 C with shaft cooler and hollow shaft"
           }
+        },
+        {
+          name: "LOW PRESSURE CENTRIFUGAL - NBR-D series",
+          description: "Low pressure centrifugal (NBR-D) (DOUBLE INLET DOUBLE WIDTH) double-inlet centrifugal fans from these series, designed for low to medium pressure applications which also requires very high flowrates. These fans are engineered for high air flow rates, aerodynamic efficiency, ensuring smooth and stable airflow with minimal energy loss. Their optimized impeller design enhances pressure generation while maintaining low noise levels and reducing mechanical stress. Constructed from durable materials, these fans provide reliable performance in demanding industrial environments. With precision-balanced components, they offer enhanced longevity and operational stability. Ideal for HVAC systems, industrial ventilation, and air handling applications, these fans deliver efficient and cost-effective solutions for controlled airflow management.",
+          image: "src/assets/products/nbrd.png",
+          specifications: {
+            volume: "from 2000 m3/h up to 600000 m3/h"
+          }
+        },
+        {
+          name: "LOW PRESSURE CENTRIFUGAL - NBS-D series",
+          description: "Low pressure centrifugal (NBS-D) (DOUBLE INLET DOUBLE WIDTH) double-inlet centrifugal fans from these series, designed for low to medium pressure applications which also requires very high flowrates. These fans are engineered for high air flow rates, aerodynamic efficiency, ensuring smooth and stable airflow with minimal energy loss. Their optimized impeller design enhances pressure generation while maintaining low noise levels and reducing mechanical stress. Constructed from durable materials, these fans provide reliable performance in demanding industrial environments. With precision-balanced components, they offer enhanced longevity and operational stability. Ideal for HVAC systems, industrial ventilation, and air handling applications, these fans deliver efficient and cost-effective solutions for controlled airflow management.",
+          image: "src/assets/products/nbsd.png",
+          specifications: {
+            volume: "from 2000 m3/h up to 600000 m3/h"
+          }
+        },
+        {
+          name: "CENTRIFUGAL INLINE FANS - NBXI series",
+          description: "Centrifugal inline fans are designed to deliver powerful airflow while fitting seamlessly into ducted systems, making them an ideal choice for industrial and commercial ventilation applications. Their robust construction and streamlined design help reduce turbulence, ensuring efficient and consistent air movement through the ductwork. By positioning the impeller and motor inline, these fans minimize space requirements and simplify installation or retrofitting. Additionally, their sturdy housings and durable coatings protect against corrosion and wear, guaranteeing long-lasting performance even under demanding operating conditions.",
+          image: "src/assets/products/nbxi.png",
+          specifications: {
+            wheelSizes: "from 310 mm up to 2000 mm",
+            volume: "from 1000 m3/h up to 200000 m3/h",
+            pressure: "from 100 mm/H20 up to 300 mm/H20"
+          }
+        },
+        {
+          name: "CENTRIFUGAL DOUBLE INLET BOX FANS - Fan section",
+          description: "Centrifugal double inlet box fans are specifically designed for air extraction, filtration systems, and air conditioning applications that require efficient airflow with minimal noise emissions. These fans feature a double inlet design that enhances air intake capacity while maintaining compact dimensions, making them ideal for both civil and industrial environments. Their low noise operation is achieved through the use of high-quality acoustic insulation materials that cover the fan housing, effectively reducing sound levels. With a robust construction and optimized aerodynamic performance, these fans ensure reliable and energy-efficient operation in ventilation systems requiring high efficiency and quiet performance.",
+          image: "src/assets/products/fansection.png",
+          specifications: {}
         },
        
       ]
@@ -192,16 +224,16 @@ export const generateAllProducts = () => {
         pressure: "3 mm/H20 up to 25 mm/H20"
       },
       series: [
-        {
-          name: "Axial inline - NEA/D series",
-          description: "The NEA/D series are primarily designed for air ventilation, either supply or exhaust duty.",
-          image: "src/assets/nead.png",
-          specifications: {
-            wheelSizes: "400 mm up to 1000 mm",
-            volume: "from 1000 m3/h up to 43000 m3/h",
-            pressure: "from 3 mm/H20 up to 25 mm/H20"
-          }
-        },
+        // {
+        //   name: "Axial inline - NEA/D series",
+        //   description: "The NEA/D series are primarily designed for air ventilation, either supply or exhaust duty.",
+        //   image: "src/assets/nead.png",
+        //   specifications: {
+        //     wheelSizes: "400 mm up to 1000 mm",
+        //     volume: "from 1000 m3/h up to 43000 m3/h",
+        //     pressure: "from 3 mm/H20 up to 25 mm/H20"
+        //   }
+        // },
         {
           name: "PLATE MOUNTED - NET/D series",
           description: "The NET/D series are primarily designed for air ventilation, either supply or exhaust duty.",
@@ -268,6 +300,86 @@ export const generateAllProducts = () => {
             wheelSizes: "310 mm up to 1240 mm",
             volume: "from 300 m3/h up to 120000 m3/h",
             pressure: "up to 2 mm/h20 up to 120000 mm/h2O"
+          }
+        }
+      ]
+    },
+    {
+      id: productId++,
+      name: "Smoke Axial Inline Fans",
+      category: "smoke-axial",
+      subcategory: "",
+      description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where it's from the highest recommended fan types when the high total and static efficiencies are required.",
+      icon: "",
+      image: "src/assets/hero-image.jpg",
+      isMainProduct: true,
+      specifications: {
+        wheelSizes: "300 mm up to 2240 mm",
+        volumeFlow: "1000 m3/h up to 250000 m3/h",
+        pressure: "5 mm/H20 up to 350 mm/H20",
+        temperature: "400C/2hrs"
+      },
+      series: [
+        {
+          name: "Axial inline smoke bifurcated fans - NEIDS series",
+          description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where it's from the highest recommended fan types when the high total and static efficiencies are required since due to the aerodynamic airfoil and also the fan body profile which achieves the minimum losses in the air flow due to pressure drag which makes it from the minimum power consumers",
+          image: "src/assets/products/axial-inline-smoke-bifurcated-fans-nsaf1-series.png",
+          specifications: {
+            wheelSizes: "300 mm up to 2000 mm",
+            volume: "from 1000 m3/h up to 200000 m3/h",
+            pressure: "from 5 mm/H20 up to 100 mm/H20",
+            motor: "thermal insulation (class F)"
+          }
+        },
+        // {
+        //   name: "Axial inline smoke bifurcated fans - NSAF/2 series",
+        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
+        //   image: "src/assets/slider-2.jpg",
+        //   specifications: {
+        //     wheelSizes: "300 mm up to 2240 mm",
+        //     volume: "from 1000 m3/h up to 250000 m3/h",
+        //     pressure: "from 5 mm/H20 up to 350mm/H20",
+        //     motor: "thermal insulation (class F)"
+        //   }
+        // },
+        // {
+        //   name: "Axial inline smoke bifurcated fans - NSAH series",
+        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
+        //   image: "src/assets/50-D3T6-8eR.jpg",
+        //   specifications: {
+        //     wheelSizes: "300 mm up to 2240 mm",
+        //     volume: "from 1000 m3/h up to 250000 m3/h",
+        //     pressure: "from 5 mm/H20 up to 350mm/H20",
+        //     motor: "thermal insulation (class H)"
+        //   }
+        // }
+      ]
+    },
+    {
+      id: productId++,
+      name: "Smoke Centrifugal Fans",
+      category: "smoke-centrifugal",
+      subcategory: "",
+      description: "This series is used for smoke evacuation from various types of buildings. It can achieve a wider static pressure range than axial fans and is more durable due to its reinforced construction, capable of withstanding temperatures exceeding 900C.",
+      icon: "",
+      image: "src/assets/slider-1.jpg",
+      isMainProduct: true,
+      specifications: {
+        wheelSizes: "310 mm up to 1800 mm",
+        volumeFlow: "2000 m3/h up to 250000 m3/h",
+        pressure: "30 mm/H2O up to 350 mm/H2O",
+        temperature: "400C/2hrs"
+      },
+      series: [
+        {
+          name: "Centrifugal smoke Fan - NBRS series",
+          description: "This series is used for smoke evacuation from various types of buildings. It can achieve a wider static pressure range than axial fans and is more durable due to its reinforced construction, capable of withstanding temperatures exceeding 900C.",
+          image: "src/assets/nprs.png",
+          specifications: {
+            wheelSizes: "310 mm up to 1800 mm",
+            volume: "from 2000 m3/h up to 250000 m3/h",
+            pressure: "from 30 mm/H2O up to 350 mm/H2O",
+            motor: "thermal insulation (class F)"
           }
         }
       ]
@@ -377,86 +489,7 @@ export const generateAllProducts = () => {
         }
       ]
     },
-    {
-      id: productId++,
-      name: "Smoke Axial Inline Fans",
-      category: "smoke-axial",
-      subcategory: "",
-      description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where it's from the highest recommended fan types when the high total and static efficiencies are required.",
-      icon: "",
-      image: "src/assets/hero-image.jpg",
-      isMainProduct: true,
-      specifications: {
-        wheelSizes: "300 mm up to 2240 mm",
-        volumeFlow: "1000 m3/h up to 250000 m3/h",
-        pressure: "5 mm/H20 up to 350 mm/H20",
-        temperature: "400C/2hrs"
-      },
-      series: [
-        {
-          name: "Axial inline smoke bifurcated fans - NEIDS series",
-          description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where it's from the highest recommended fan types when the high total and static efficiencies are required since due to the aerodynamic airfoil and also the fan body profile which achieves the minimum losses in the air flow due to pressure drag which makes it from the minimum power consumers",
-          image: "src/assets/products/axial-inline-smoke-bifurcated-fans-nsaf1-series.png",
-          specifications: {
-            wheelSizes: "300 mm up to 2000 mm",
-            volume: "from 1000 m3/h up to 200000 m3/h",
-            pressure: "from 5 mm/H20 up to 100 mm/H20",
-            motor: "thermal insulation (class F)"
-          }
-        },
-        // {
-        //   name: "Axial inline smoke bifurcated fans - NSAF/2 series",
-        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
-        //   image: "src/assets/slider-2.jpg",
-        //   specifications: {
-        //     wheelSizes: "300 mm up to 2240 mm",
-        //     volume: "from 1000 m3/h up to 250000 m3/h",
-        //     pressure: "from 5 mm/H20 up to 350mm/H20",
-        //     motor: "thermal insulation (class F)"
-        //   }
-        // },
-        // {
-        //   name: "Axial inline smoke bifurcated fans - NSAH series",
-        //   description: "This series is used for smoke evacuation from various types of applications such as (Tunnels - high rise buildings  car parkings -etc..) Where high flow range could be achieved and also equipped with aerodynamic airfoil profile diecast aluminum blade for excellent efficiency",
-        //   image: "src/assets/50-D3T6-8eR.jpg",
-        //   specifications: {
-        //     wheelSizes: "300 mm up to 2240 mm",
-        //     volume: "from 1000 m3/h up to 250000 m3/h",
-        //     pressure: "from 5 mm/H20 up to 350mm/H20",
-        //     motor: "thermal insulation (class H)"
-        //   }
-        // }
-      ]
-    },
-    {
-      id: productId++,
-      name: "Smoke Centrifugal Fans",
-      category: "smoke-centrifugal",
-      subcategory: "",
-      description: "This series is used for smoke evacuation from various types of buildings. It can achieve a wider static pressure range than axial fans and is more durable due to its reinforced construction, capable of withstanding temperatures exceeding 900C.",
-      icon: "",
-      image: "src/assets/slider-1.jpg",
-      isMainProduct: true,
-      specifications: {
-        wheelSizes: "310 mm up to 1800 mm",
-        volumeFlow: "2000 m3/h up to 250000 m3/h",
-        pressure: "30 mm/H2O up to 350 mm/H2O",
-        temperature: "400C/2hrs"
-      },
-      series: [
-        {
-          name: "Centrifugal smoke Fan - NBRS series",
-          description: "This series is used for smoke evacuation from various types of buildings. It can achieve a wider static pressure range than axial fans and is more durable due to its reinforced construction, capable of withstanding temperatures exceeding 900C.",
-          image: "src/assets/nprs.png",
-          specifications: {
-            wheelSizes: "310 mm up to 1800 mm",
-            volume: "from 2000 m3/h up to 250000 m3/h",
-            pressure: "from 30 mm/H2O up to 350 mm/H2O",
-            motor: "thermal insulation (class F)"
-          }
-        }
-      ]
-    }
+   
   ];
 
   // Add all main products

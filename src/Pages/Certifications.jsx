@@ -27,8 +27,12 @@ const Certifications = () => {
     {
       id: "university",
       logo: universityLogo,
-      name: getTranslation("universityName", language),
-      description: getTranslation("universityDesc", language),
+      name: isArabic 
+        ? "شهادة تقدير من الجامعة" 
+        : "Certificate of Appreciation from the University",
+      description: isArabic
+        ? "منحت من الجامعة تقديراً لجهودنا في دعم الصناعة وتعزيز التميز المعرفي."
+        : "Awarded by the university in recognition of our efforts in supporting industry and promoting knowledge excellence.",
     },
   ];
 

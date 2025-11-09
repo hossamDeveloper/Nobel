@@ -42,7 +42,7 @@ const Slider = () => {
     },
     {
       image: slider5,
-      title: isArabic ? 'Fan Section صندوقية مزدوجة المدخل' : 'Smoke fire rated',
+      title: isArabic ? 'Fan Section صندوقية مزدوجة المدخل' : 'Smoke Fire Rated',
       subtitle: isArabic ? 'عزل صوتي ممتاز وكفاءة تهوية عالية' : 'Superior acoustic insulation, high‑efficiency airflow',
       description: isArabic
         ? 'مراوح عالية الأداء مصممة للعمل في ظروف الدخان والحرائق، مما يضمن السلامة والموثوقية في أنظمة التهوية الطارئة.'

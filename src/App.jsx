@@ -8,6 +8,8 @@ import Certifications from './Pages/Certifications'
 import Clients from './Pages/Clients'
 import About from './Pages/About'
 import Applications from './Pages/Applications'
+import Blog from './Pages/Blog'
+import BlogDetails from './Pages/BlogDetails'
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/clients" element={<Clients />} />
               <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:id" element={<BlogDetails />} />
             </Routes>
           </main>
           

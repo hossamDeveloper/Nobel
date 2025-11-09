@@ -29,6 +29,7 @@ const Navbar = () => {
     },
     { name: getTranslation("clients", language), path: "/clients" },
     { name: getTranslation("about", language), path: "/about" },
+    { name: isArabic ? "المدونة" : "Blog", path: "/blog" },
   ];
 
   const contactInfo = {
